@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新潟・小千谷 コイキング聖地巡礼 - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>新潟・小千谷 コイキング聖地巡礼</h1>
+    
+    <div class="subtitle">コイキングの聖地・小千谷で4つのポケふたを制覇。錦鯉発祥の地でコイキングのルーツを感じる旅。へぎそばと日本酒も堪能する1...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">1泊2日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">&#x1F534; ポケふた 4箇所</span>
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">約17,110円/人</span>
+        
+        <span class="cover-tag">小千谷</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">東京駅→越後湯沢→小千谷（上越新幹線+ほくほく線 約2時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #147（コイキング・ピジョン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた #144（コイキング）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">ポケふた #146（コイキング・ヒンバス）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">へぎそばランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">ポケふた #145（コイキング）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">錦鯉の里
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">小千谷→越後湯沢（宿泊）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">越後湯沢 温泉＆日本酒
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（日曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">朝食（宿の朝ごはん）
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">湯沢高原パノラマパーク
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">越後湯沢でタレカツ丼ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">越後湯沢→東京（上越新幹線 帰路 約1.5時間）
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">東京駅→越後湯沢→小千谷（上越新幹線+ほくほく線 約2時間）</div>
+        
+        <div class="spot-desc">東京駅から上越新幹線で越後湯沢、乗り換えて小千谷方面へ</div>
+        
+        
+        <div class="spot-cost">&#165;7,000</div>
+        
+        
+        <div class="spot-tips">自由席で十分。車窓から谷川岳の絶景</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #147（コイキング・ピジョン）</div>
+        
+        <div class="spot-desc">小千谷駅から最も近いポケふた。コイキング巡礼スタート！</div>
+        
+        
+        
+        <div class="spot-tips">駅から徒歩圏内</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.314301,138.7835" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #144（コイキング）</div>
+        
+        <div class="spot-desc">コイキング単体のポケふた。錦鯉の本場ならでは</div>
+        
+        
+        
+        <div class="spot-tips">#147から徒歩10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.314216,138.794792" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #146（コイキング・ヒンバス）</div>
+        
+        <div class="spot-desc">コイキングとヒンバス（ルビサファの鯉ポケ）の共演</div>
+        
+        
+        
+        <div class="spot-tips">#144から近い</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.311028,138.795653" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">へぎそばランチ</div>
+        
+        <div class="spot-desc">小千谷名物のへぎそば。布海苔つなぎの独特な食感。「わたや」「角屋」が有名</div>
+        
+        
+        <div class="spot-cost">&#165;1,500</div>
+        
+        
+        <div class="spot-tips">「わたや」は11時開店。天へぎが絶品</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.312,138.796" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #145（コイキング）</div>
+        
+        <div class="spot-desc">4つ目！小千谷コイキングコンプリート！</div>
+        
+        
+        
+        <div class="spot-tips">少し東にあるので散歩がてら</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.309883,138.812939" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">錦鯉の里</div>
+        
+        <div class="spot-desc">世界唯一の錦鯉ミュージアム。コイキングのモデルはここの錦鯉！</div>
+        
+        
+        <div class="spot-cost">&#165;520</div>
+        
+        
+        <div class="spot-tips">入館520円。鯉にエサやりもできる</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.313,138.7942" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">小千谷→越後湯沢（宿泊）</div>
+        
+        <div class="spot-desc">温泉街の越後湯沢へ移動。駅前に温泉宿多数</div>
+        
+        
+        <div class="spot-cost">&#165;500</div>
+        
+        
+        <div class="spot-tips">電車30分</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">越後湯沢 温泉＆日本酒</div>
+        
+        <div class="spot-desc">駅ナカの「ぽんしゅ館」で新潟の地酒100種以上を利き酒。温泉でゆったり</div>
+        
+        
+        <div class="spot-cost">&#165;12,000</div>
+        
+        
+        <div class="spot-tips">ぽんしゅ館は500円でおちょこ5杯。宿は駅前が便利</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.9342,138.8133" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（日曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">朝食（宿の朝ごはん）</div>
+        
+        <div class="spot-desc">新潟産コシヒカリの朝食。米が本当にうまい</div>
+        
+        
+        
+        <div class="spot-tips">宿泊費に込み</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.9342,138.8133" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">湯沢高原パノラマパーク</div>
+        
+        <div class="spot-desc">ロープウェイで標高1000mへ。晴れなら絶景パノラマ</div>
+        
+        
+        <div class="spot-cost">&#165;2,200</div>
+        
+        
+        <div class="spot-tips">ロープウェイ往復2,200円。朝の方が空いてる</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.9267,138.8017" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">越後湯沢でタレカツ丼ランチ</div>
+        
+        <div class="spot-desc">新潟名物のタレカツ丼。甘辛い醤油ダレのカツ丼</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">「むらんごっつぉ」が人気</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.9342,138.8133" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">越後湯沢→東京（上越新幹線 帰路 約1.5時間）</div>
+        
+        <div class="spot-desc">新幹線で帰京。午後はフリー</div>
+        
+        
+        <div class="spot-cost">&#165;7,000</div>
+        
+        
+        <div class="spot-tips">お土産は駅ナカのCoCoLo湯沢が充実</div>
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">POKEFUTA</span>
+    <h2>ポケふた全4箇所</h2>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">小千谷市（コイキング・ピジョン）<span class="pokefuta-id">#147</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">小千谷市（コイキング）<span class="pokefuta-id">#144</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">小千谷市（コイキング・ヒンバス）<span class="pokefuta-id">#146</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">小千谷市（コイキング）<span class="pokefuta-id">#145</span></div>
+    </div>
+    
+</div>
+
+
+<!-- グルメまとめ -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">GOURMET</span>
+    <h2>ご当地グルメ</h2>
+    <div class="highlights">
+        
+        <span class="highlight-tag">へぎそば</span>
+        
+        <span class="highlight-tag">タレカツ丼</span>
+        
+        <span class="highlight-tag">新潟地酒（ぽんしゅ館）</span>
+        
+        <span class="highlight-tag">コシヒカリ</span>
+        
+    </div>
+</div>
+
+
+<!-- 持ち物 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">PACKING</span>
+    <h2>持ち物チェックリスト</h2>
+    <div class="packing-grid">
+        
+        <div class="packing-item">温泉セット</div>
+        
+        <div class="packing-item">Suicaチャージ</div>
+        
+        <div class="packing-item">山は涼しいので上着</div>
+        
+    </div>
+</div>
+
+
+<!-- 費用 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">COST</span>
+    <h2>費用まとめ</h2>
+    <table class="cost-table">
+        
+        <tr><td>交通費</td><td>&yen;14,500</td></tr>
+        
+        
+        <tr><td>宿泊</td><td>&yen;12,000</td></tr>
+        
+        
+        <tr><td>食事</td><td>&yen;5,000</td></tr>
+        
+        
+        <tr><td>アクティビティ</td><td>&yen;2,720</td></tr>
+        
+        
+        
+    </table>
+    
+    <div class="total-box">
+        合計 &yen;34,220
+        
+        （1人あたり &yen;17,110）
+        
+    </div>
+    
+</div>
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a> |
+    <a href="index.html">しおり一覧</a>
+</div>
+
+</body>
+</html>

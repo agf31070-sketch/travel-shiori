@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茨城ポケふた巡り レックウザ＆水戸コース - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>茨城ポケふた巡り レックウザ＆水戸コース</h1>
+    
+    <div class="subtitle">つくばのレックウザから水戸まで、茨城県のポケふた5つを1日で回収。レンタカーで効率よく巡る。筑波山の絶景と水戸の偕楽園も...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">0泊1日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">&#x1F534; ポケふた 5箇所</span>
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">約4,710円/人</span>
+        
+        <span class="cover-tag">つくば・水戸</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>日帰り（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">錦糸町→つくば（TX つくばエクスプレス 約50分）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた #411（レックウザ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">筑波山ドライブ（車窓）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #410（グレッグル・ハラバリー）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">ポケふた #413（ジャローダ・ナットレイ・ハーデリア）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">水戸ランチ（あんこう鍋 or 納豆料理）
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">ポケふた #412（ボーマンダ・ルチャブル）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">ポケふた #409（マラカッチ・オトシドリ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">つくば→錦糸町（帰路）
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 日帰り（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">錦糸町→つくば（TX つくばエクスプレス 約50分）</div>
+        
+        <div class="spot-desc">秋葉原乗り換えでつくば駅へ。レンタカーを借りる</div>
+        
+        
+        <div class="spot-cost">&#165;1,210</div>
+        
+        
+        <div class="spot-tips">TX快速で45分。つくば駅前でレンタカー</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #411（レックウザ）</div>
+        
+        <div class="spot-desc">つくば市のポケふた。伝説ポケモンのレックウザ！</div>
+        
+        
+        
+        <div class="spot-tips">つくば駅近くで朝イチ回収</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.08581,140.110839" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">筑波山ドライブ（車窓）</div>
+        
+        <div class="spot-desc">つくば市内から筑波山方面へ。日本百名山で最も低い山</div>
+        
+        
+        
+        <div class="spot-tips">時間があれば筑波山神社に参拝</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.2252,140.1064" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #410（グレッグル・ハラバリー）</div>
+        
+        <div class="spot-desc">筑西市のポケふた。つくばから車で40分</div>
+        
+        
+        
+        <div class="spot-tips">道の駅しもつまで休憩もあり</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.322445,139.994116" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #413（ジャローダ・ナットレイ・ハーデリア）</div>
+        
+        <div class="spot-desc">水戸市のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">筑西から水戸へ車で50分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.372273,140.452358" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">水戸ランチ（あんこう鍋 or 納豆料理）</div>
+        
+        <div class="spot-desc">冬ならあんこう鍋、通年なら納豆料理や常陸秋そば</div>
+        
+        
+        <div class="spot-cost">&#165;2,000</div>
+        
+        
+        <div class="spot-tips">「山翠」のあんこう鍋が有名</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.3708,140.4748" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #412（ボーマンダ・ルチャブル）</div>
+        
+        <div class="spot-desc">常陸太田市のポケふた。水戸から車30分</div>
+        
+        
+        
+        <div class="spot-tips">竜神大吊橋の近くエリア</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=36.510672,140.525632" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #409（マラカッチ・オトシドリ）</div>
+        
+        <div class="spot-desc">神栖市のポケふた。帰り道に立ち寄り</div>
+        
+        
+        
+        <div class="spot-tips">常陸太田→神栖は遠回りなので、翌日に回すのもあり</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.897341,140.649095" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">つくば→錦糸町（帰路）</div>
+        
+        <div class="spot-desc">レンタカー返却、TXで帰京</div>
+        
+        
+        <div class="spot-cost">&#165;1,210</div>
+        
+        
+        <div class="spot-tips">神栖は遠いので3-4個で切り上げてもOK</div>
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">POKEFUTA</span>
+    <h2>ポケふた全5箇所</h2>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">つくば市（レックウザ）<span class="pokefuta-id">#411</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">筑西市（グレッグル）<span class="pokefuta-id">#410</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">水戸市（ジャローダ）<span class="pokefuta-id">#413</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">常陸太田市（ボーマンダ）<span class="pokefuta-id">#412</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">神栖市（マラカッチ）<span class="pokefuta-id">#409</span></div>
+    </div>
+    
+</div>
+
+
+<!-- グルメまとめ -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">GOURMET</span>
+    <h2>ご当地グルメ</h2>
+    <div class="highlights">
+        
+        <span class="highlight-tag">水戸納豆料理</span>
+        
+        <span class="highlight-tag">常陸秋そば</span>
+        
+        <span class="highlight-tag">あんこう鍋（冬季）</span>
+        
+        <span class="highlight-tag">メロン（鹿行地域）</span>
+        
+    </div>
+</div>
+
+
+<!-- 持ち物 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">PACKING</span>
+    <h2>持ち物チェックリスト</h2>
+    <div class="packing-grid">
+        
+        <div class="packing-item">レンタカー予約必須</div>
+        
+        <div class="packing-item">運転免許証</div>
+        
+        <div class="packing-item">Suicaチャージ</div>
+        
+        <div class="packing-item">神栖は遠いので無理せず</div>
+        
+    </div>
+</div>
+
+
+<!-- 費用 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">COST</span>
+    <h2>費用まとめ</h2>
+    <table class="cost-table">
+        
+        <tr><td>交通費</td><td>&yen;2,420</td></tr>
+        
+        
+        
+        <tr><td>食事</td><td>&yen;2,000</td></tr>
+        
+        
+        <tr><td>アクティビティ</td><td>&yen;5,000</td></tr>
+        
+        
+        
+    </table>
+    
+    <div class="total-box">
+        合計 &yen;9,420
+        
+        （1人あたり &yen;4,710）
+        
+    </div>
+    
+</div>
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a> |
+    <a href="index.html">しおり一覧</a>
+</div>
+
+</body>
+</html>

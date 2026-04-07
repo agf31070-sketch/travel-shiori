@@ -1,0 +1,3103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北海道C：ロコン王国ガチコンプ 全50箇所制覇 - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>北海道C：ロコン王国ガチコンプ 全50箇所制覇</h1>
+    
+    <div class="subtitle">5泊6日で北海道全50ポケふたを完全制覇！稚内→根室→函館まで約2,500km走破。レンタカー必須の壮大な冒険。ロコン＆...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">5泊6日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">&#x1F534; ポケふた 50箇所</span>
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">約76,700円/人</span>
+        
+        <span class="cover-tag">北海道全域</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（月曜日）札幌エリア＋空知</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:00</span>
+            <span class="route-place">羽田空港→新千歳空港
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた #60（ロコン）恵庭市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">ポケふた #440（ロコン・アローラロコン・ヤクデ）由仁町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #141（ロコン・オムナイト・ズガイドス）三笠市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた #304（ロコン・アローラロコン・バチュル）歌志内市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">ポケふた #439（ロコン・アローラロコン・ペロリーム）砂川市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">砂川 北菓楼＆ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">ポケふた #278（アローラロコン・ヤバチャ・ポットデス）当別町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">ポケふた #59（ロコン・ナエトル）石狩市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">ポケふた #438（ロコン・ケッキング）札幌市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">ポケふた #218（アローラロコン・バニプッチ・ミブリム）赤井川村
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">ポケふた #188（アローラロコン）小樽市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:30</span>
+            <span class="route-place">小樽運河＆寿司ディナー
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">19:30</span>
+            <span class="route-place">旭川へ移動＆宿泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（火曜日）旭川〜道北〜宗谷</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">06:30</span>
+            <span class="route-place">旭川 朝ラーメン
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">07:30</span>
+            <span class="route-place">ポケふた #214（アローラロコン・コオリッポ・クマシュン）旭川市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">ポケふた #65（アローラロコン・ポッチャマ）比布町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた #143（アローラロコン・ヒトツキ）剣淵町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた #64（ロコン・メリープ）士別市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #66（ロコン・アローラロコン）天塩町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた #442（ロコン・アローラロコン・フラベベ）幌延町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">ポケふた #68（アローラロコン・ミルタンク）豊富町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">ポケふた #67（アローラロコン・アローラキュウコン）稚内市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">宗谷岬＆稚内ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">ポケふた #306（ロコン・アローラロコン・エイパム）猿払村
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:30</span>
+            <span class="route-place">ポケふた #69（アローラロコン・タマザラシ）紋別市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:30</span>
+            <span class="route-place">紋別 カニ夕食＆宿泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>3日目（水曜日）オホーツク〜道東</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:00</span>
+            <span class="route-place">ポケふた #444（ロコン・アローラロコン・アブリー）湧別町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">07:30</span>
+            <span class="route-place">ポケふた #70（アローラロコン・ユキメノコ）遠軽町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた #303（ロコン・アローラロコン）北見市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた #443（ロコン・アローラロコン・メブキジカ）津別町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">ポケふた #307（ロコン・アローラロコン・ハネッコ）美幌町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた #71（ロコン・ムクホーク）大空町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #217（アローラロコン・マニューラ）網走市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">ポケふた #220（ロコン・パルキア）斜里町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">斜里 知床鮭ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">ポケふた #193（ロコン・ワカシャモ）中標津町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">ポケふた #445（アローラロコン・トドグラー）別海町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:00</span>
+            <span class="route-place">ポケふた #189（アローラロコン・バリコオル）根室市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">根室 エスカロップ＆花咲ガニ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">19:00</span>
+            <span class="route-place">釧路へ移動＆宿泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>4日目（木曜日）道東〜十勝〜日高</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:00</span>
+            <span class="route-place">ポケふた #215（アローラロコン・ジュナイパー）釧路市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">ポケふた #191（ロコン・メタモン）本別町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた #73（アローラロコン・ユクシー・エムリット・アグノム）足寄町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">ポケふた #192（アローラロコン・カチコール）陸別町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #72（アローラロコン・ヒメグマ）新得町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">新得そばランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">ポケふた #216（ロコン・アローラロコン・ドロバンコ）帯広市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">帯広豚丼
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">ポケふた #221（アローラロコン・ルガルガン）えりも町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:00</span>
+            <span class="route-place">ポケふた #140（ロコン・キュウコン）苫小牧市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">ポケふた #61（ロコン・ウリムー）洞爺湖町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:00</span>
+            <span class="route-place">洞爺湖温泉 宿泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>5日目（金曜日）登別〜函館〜道南</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:00</span>
+            <span class="route-place">ポケふた #190（ロコン・キテルグマ）登別市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">07:30</span>
+            <span class="route-place">登別温泉 地獄谷（朝散歩）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた #302（ロコン・アローラロコン・イルミーゼ）室蘭市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">ポケふた #62（アローラロコン・マーイーカ）森町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #187（アローラロコン・トゲキッス）函館市
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">函館朝市で海鮮丼ブランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">ポケふた #305（ロコン・アローラロコン・ヒメンカ）木古内町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">ポケふた #63（ロコン・ヒコザル）上ノ国町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">ポケふた #441（ロコン・アローラロコン・ミノマダム）厚沢部町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">函館山夜景（早めに場所取り）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:00</span>
+            <span class="route-place">ラッキーピエロ＆函館泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>6日目（土曜日）富良野回収＆帰路</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">06:00</span>
+            <span class="route-place">函館→富良野エリア（車4時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた #219（アローラロコン・ディアルガ）東川町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #324（アローラロコン・ヒスイウォーグル）美瑛町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた #142（アローラロコン・エネコロロ）上富良野町
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">富良野メロン＆カレーで祝杯
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">富良野→旭川空港or新千歳空港→羽田（帰路）
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（月曜日）札幌エリア＋空知</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">07:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">羽田空港→新千歳空港</div>
+        
+        <div class="spot-desc">早朝便で新千歳。レンタカーピックアップ</div>
+        
+        
+        <div class="spot-cost">&#165;15,000</div>
+        
+        
+        <div class="spot-tips">6日間レンタカーを借りる。ETCカード忘れずに</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #60（ロコン）恵庭市</div>
+        
+        <div class="spot-desc">新千歳から最も近いポケふた</div>
+        
+        
+        
+        <div class="spot-tips">空港から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.897132,141.585789" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #440（ロコン・アローラロコン・ヤクデ）由仁町</div>
+        
+        <div class="spot-desc">由仁町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">恵庭から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.01186,141.78697" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #141（ロコン・オムナイト・ズガイドス）三笠市</div>
+        
+        <div class="spot-desc">化石の町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">由仁から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.261317,141.962667" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #304（ロコン・アローラロコン・バチュル）歌志内市</div>
+        
+        <div class="spot-desc">日本一小さい市のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">三笠から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.503206,142.005914" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #439（ロコン・アローラロコン・ペロリーム）砂川市</div>
+        
+        <div class="spot-desc">砂川のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">歌志内から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.493037,141.907367" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">砂川 北菓楼＆ランチ</div>
+        
+        <div class="spot-desc">北菓楼でシュークリーム＋ランチ</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">北菓楼本店限定シュークリーム</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.49,141.91" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #278（アローラロコン・ヤバチャ・ポットデス）当別町</div>
+        
+        <div class="spot-desc">当別町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">砂川から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.17716,141.44852" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #59（ロコン・ナエトル）石狩市</div>
+        
+        <div class="spot-desc">石狩市のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">当別から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.585848,141.423898" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #438（ロコン・ケッキング）札幌市</div>
+        
+        <div class="spot-desc">札幌のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">石狩から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.96616,141.16696" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #218（アローラロコン・バニプッチ・ミブリム）赤井川村</div>
+        
+        <div class="spot-desc">赤井川村のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">札幌から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.05125,140.84426" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #188（アローラロコン）小樽市</div>
+        
+        <div class="spot-desc">小樽のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">赤井川から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.195544,140.998285" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">17:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">小樽運河＆寿司ディナー</div>
+        
+        <div class="spot-desc">11箇所回収！小樽で寿司のご褒美</div>
+        
+        
+        <div class="spot-cost">&#165;4,000</div>
+        
+        
+        <div class="spot-tips">1日目で11箇所制覇！</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.1907,140.9946" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">19:30
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">旭川へ移動＆宿泊</div>
+        
+        <div class="spot-desc">小樽→旭川（高速2時間）。翌日の道北攻めに備える</div>
+        
+        
+        <div class="spot-cost">&#165;5,500</div>
+        
+        
+        <div class="spot-tips">小樽→旭川は約2時間。夜移動で時間を稼ぐ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.7696,142.359" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（火曜日）旭川〜道北〜宗谷</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">06:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">旭川 朝ラーメン</div>
+        
+        <div class="spot-desc">蜂屋で朝ラー。旭川は朝ラー文化がある</div>
+        
+        
+        <div class="spot-cost">&#165;900</div>
+        
+        
+        <div class="spot-tips">蜂屋は7時から営業</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.7696,142.359" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">07:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #214（アローラロコン・コオリッポ・クマシュン）旭川市</div>
+        
+        <div class="spot-desc">旭川のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">旭川市内</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.759596,142.348509" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #65（アローラロコン・ポッチャマ）比布町</div>
+        
+        <div class="spot-desc">比布町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">旭川から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.875033,142.471699" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #143（アローラロコン・ヒトツキ）剣淵町</div>
+        
+        <div class="spot-desc">剣淵町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">比布から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.10003,142.35931" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #64（ロコン・メリープ）士別市</div>
+        
+        <div class="spot-desc">士別市のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">剣淵から車10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.175974,142.392417" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #66（ロコン・アローラロコン）天塩町</div>
+        
+        <div class="spot-desc">日本海側へ。天塩町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">士別から車1.5時間。オロロンラインが絶景</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.88452,141.74797" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #442（ロコン・アローラロコン・フラベベ）幌延町</div>
+        
+        <div class="spot-desc">幌延町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">天塩から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=45.040817,141.8612" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #68（アローラロコン・ミルタンク）豊富町</div>
+        
+        <div class="spot-desc">豊富町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">幌延から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=45.103245,141.778643" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #67（アローラロコン・アローラキュウコン）稚内市</div>
+        
+        <div class="spot-desc">最北端の街！アローラキュウコンにふさわしい</div>
+        
+        
+        
+        <div class="spot-tips">豊富から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=45.417236,141.677095" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">宗谷岬＆稚内ランチ</div>
+        
+        <div class="spot-desc">日本最北端到達！タコしゃぶランチ</div>
+        
+        
+        <div class="spot-cost">&#165;2,000</div>
+        
+        
+        <div class="spot-tips">宗谷岬→稚内市街で昼食</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=45.5231,141.9373" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #306（ロコン・アローラロコン・エイパム）猿払村</div>
+        
+        <div class="spot-desc">猿払村のポケふた。オホーツク海側へ</div>
+        
+        
+        
+        <div class="spot-tips">稚内から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=45.329186,142.177267" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #69（アローラロコン・タマザラシ）紋別市</div>
+        
+        <div class="spot-desc">オホーツク海沿いを南下して紋別へ</div>
+        
+        
+        
+        <div class="spot-tips">猿払から車3時間。長距離ドライブ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.334641,143.372211" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">18:30
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">紋別 カニ夕食＆宿泊</div>
+        
+        <div class="spot-desc">2日目は11箇所回収！紋別でカニのご褒美</div>
+        
+        
+        <div class="spot-cost">&#165;10,000</div>
+        
+        
+        <div class="spot-tips">走行距離約500km。お疲れ様！</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.3346,143.3722" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 3 - 3日目（水曜日）オホーツク〜道東</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">07:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #444（ロコン・アローラロコン・アブリー）湧別町</div>
+        
+        <div class="spot-desc">紋別の隣、湧別町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">紋別から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.18466,143.594848" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">07:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #70（アローラロコン・ユキメノコ）遠軽町</div>
+        
+        <div class="spot-desc">遠軽町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">湧別から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.021878,143.497131" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #303（ロコン・アローラロコン）北見市</div>
+        
+        <div class="spot-desc">北見市のポケふた。焼肉の町</div>
+        
+        
+        
+        <div class="spot-tips">遠軽から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.75359,143.500587" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #443（ロコン・アローラロコン・メブキジカ）津別町</div>
+        
+        <div class="spot-desc">津別町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">北見から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.69494,144.029683" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #307（ロコン・アローラロコン・ハネッコ）美幌町</div>
+        
+        <div class="spot-desc">美幌町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">津別から車20分。美幌峠の絶景</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.836455,144.105878" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #71（ロコン・ムクホーク）大空町</div>
+        
+        <div class="spot-desc">大空町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">美幌から車15分。女満別空港の町</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.915555,144.17137" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #217（アローラロコン・マニューラ）網走市</div>
+        
+        <div class="spot-desc">網走市のポケふた。網走監獄の町</div>
+        
+        
+        
+        <div class="spot-tips">大空から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.021949,144.274423" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #220（ロコン・パルキア）斜里町</div>
+        
+        <div class="spot-desc">知床の玄関口。パルキアがいる！</div>
+        
+        
+        
+        <div class="spot-tips">網走から車50分。知床が見える</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.06884,144.99062" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">斜里 知床鮭ランチ</div>
+        
+        <div class="spot-desc">知床の鮭・イクラ丼で腹ごしらえ</div>
+        
+        
+        <div class="spot-cost">&#165;1,800</div>
+        
+        
+        <div class="spot-tips">道の駅うとろ・シリエトクが便利</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=44.0688,144.9906" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #193（ロコン・ワカシャモ）中標津町</div>
+        
+        <div class="spot-desc">中標津町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">斜里から車1.5時間。開陽台の絶景</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.554566,144.969609" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #445（アローラロコン・トドグラー）別海町</div>
+        
+        <div class="spot-desc">別海町のポケふた。牛乳の町</div>
+        
+        
+        
+        <div class="spot-tips">中標津から車20分。ジャンボホタテバーガー</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.533265,145.23697" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #189（アローラロコン・バリコオル）根室市</div>
+        
+        <div class="spot-desc">日本最東端の街のポケふた！</div>
+        
+        
+        
+        <div class="spot-tips">別海から車40分。納沙布岬も余裕あれば</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.335936,145.598194" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">根室 エスカロップ＆花咲ガニ</div>
+        
+        <div class="spot-desc">根室名物エスカロップ（バターライス＋カツ＋デミ）と花咲ガニ</div>
+        
+        
+        <div class="spot-cost">&#165;3,000</div>
+        
+        
+        <div class="spot-tips">どりあんのエスカロップが元祖</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.33,145.58" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">19:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">釧路へ移動＆宿泊</div>
+        
+        <div class="spot-desc">根室→釧路（車2時間）。3日目は11箇所！</div>
+        
+        
+        <div class="spot-cost">&#165;6,000</div>
+        
+        
+        <div class="spot-tips">根室→釧路は約2時間。釧路の炉端焼きも余裕あれば</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.9849,144.3819" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 4 - 4日目（木曜日）道東〜十勝〜日高</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">07:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #215（アローラロコン・ジュナイパー）釧路市</div>
+        
+        <div class="spot-desc">釧路市のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">釧路市内。朝イチで回収</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.144027,144.14549" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #191（ロコン・メタモン）本別町</div>
+        
+        <div class="spot-desc">本別町のポケふた。豆の町</div>
+        
+        
+        
+        <div class="spot-tips">釧路から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.125781,143.613441" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #73（アローラロコン・ユクシー・エムリット・アグノム）足寄町</div>
+        
+        <div class="spot-desc">足寄町のポケふた。伝説の湖ポケモントリオ！</div>
+        
+        
+        
+        <div class="spot-tips">本別から車15分。松山千春の出身地</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.244229,143.546753" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #192（アローラロコン・カチコール）陸別町</div>
+        
+        <div class="spot-desc">日本一寒い町のポケふた。カチコールにぴったり！</div>
+        
+        
+        
+        <div class="spot-tips">足寄から車30分。冬はマイナス30度</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.467701,143.742721" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #72（アローラロコン・ヒメグマ）新得町</div>
+        
+        <div class="spot-desc">新得町のポケふた。そばの町</div>
+        
+        
+        
+        <div class="spot-tips">陸別から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.082684,142.832927" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">新得そばランチ</div>
+        
+        <div class="spot-desc">新得は蕎麦の生産量日本一。手打ちそばを堪能</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">そば処みなとやが人気</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.0827,142.8329" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #216（ロコン・アローラロコン・ドロバンコ）帯広市</div>
+        
+        <div class="spot-desc">帯広のポケふた。豚丼の町</div>
+        
+        
+        
+        <div class="spot-tips">新得から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.918205,143.202563" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">帯広豚丼</div>
+        
+        <div class="spot-desc">ぱんちょうの豚丼。甘辛ダレの炭焼き豚が最高</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">ぱんちょう・いっぴんが二大名店</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.92,143.2" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #221（アローラロコン・ルガルガン）えりも町</div>
+        
+        <div class="spot-desc">襟裳岬のポケふた。風の町！</div>
+        
+        
+        
+        <div class="spot-tips">帯広から車2時間。黄金道路（国道336号）経由</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.01782,143.14619" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #140（ロコン・キュウコン）苫小牧市</div>
+        
+        <div class="spot-desc">苫小牧のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">えりもから車2時間。日高経由</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.635755,141.61009" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #61（ロコン・ウリムー）洞爺湖町</div>
+        
+        <div class="spot-desc">洞爺湖町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">苫小牧から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.566111,140.819072" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 4</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">18:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">洞爺湖温泉 宿泊</div>
+        
+        <div class="spot-desc">4日目は10箇所！洞爺湖の絶景温泉で回復</div>
+        
+        
+        <div class="spot-cost">&#165;8,000</div>
+        
+        
+        <div class="spot-tips">洞爺湖万世閣が眺め良し。花火大会（4-10月毎晩）</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.5661,140.8191" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 5 - 5日目（金曜日）登別〜函館〜道南</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">07:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #190（ロコン・キテルグマ）登別市</div>
+        
+        <div class="spot-desc">登別のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">洞爺湖から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.452786,141.180999" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">07:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">登別温泉 地獄谷（朝散歩）</div>
+        
+        <div class="spot-desc">朝の地獄谷は人が少なくて最高</div>
+        
+        
+        
+        <div class="spot-tips">無料。朝7時台はほぼ貸切</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.4929,141.1534" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #302（ロコン・アローラロコン・イルミーゼ）室蘭市</div>
+        
+        <div class="spot-desc">室蘭のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">登別から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.313837,140.973986" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #62（アローラロコン・マーイーカ）森町</div>
+        
+        <div class="spot-desc">森町のポケふた。いかめし発祥の地</div>
+        
+        
+        
+        <div class="spot-tips">室蘭から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=42.108855,140.572941" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #187（アローラロコン・トゲキッス）函館市</div>
+        
+        <div class="spot-desc">函館のポケふた！</div>
+        
+        
+        
+        <div class="spot-tips">森町から車1時間</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.755926,140.715684" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">函館朝市で海鮮丼ブランチ</div>
+        
+        <div class="spot-desc">五稜郭タワーの前に腹ごしらえ</div>
+        
+        
+        <div class="spot-cost">&#165;2,500</div>
+        
+        
+        <div class="spot-tips">うにいくら丼がおすすめ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.7736,140.7267" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #305（ロコン・アローラロコン・ヒメンカ）木古内町</div>
+        
+        <div class="spot-desc">木古内町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">函館から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.678024,140.43558" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #63（ロコン・ヒコザル）上ノ国町</div>
+        
+        <div class="spot-desc">上ノ国町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">木古内から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.808398,140.095409" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #441（ロコン・アローラロコン・ミノマダム）厚沢部町</div>
+        
+        <div class="spot-desc">厚沢部町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">上ノ国から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.916775,140.216556" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">函館山夜景（早めに場所取り）</div>
+        
+        <div class="spot-desc">厚沢部→函館へ戻って函館山。コンプ記念の絶景！</div>
+        
+        
+        <div class="spot-cost">&#165;1,800</div>
+        
+        
+        <div class="spot-tips">日没30分前に到着。5日目で7箇所回収</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.7588,140.702" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 5</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">18:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">ラッキーピエロ＆函館泊</div>
+        
+        <div class="spot-desc">函館名物ラッキーピエロでコンプ祝い！</div>
+        
+        
+        <div class="spot-cost">&#165;7,000</div>
+        
+        
+        <div class="spot-tips">チャイニーズチキンバーガーが一番人気</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=41.7736,140.7267" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 6 - 6日目（土曜日）富良野回収＆帰路</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">06:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">函館→富良野エリア（車4時間）</div>
+        
+        <div class="spot-desc">函館空港でレンタカー返却せず、道央へ。残り3箇所を回収！</div>
+        
+        
+        <div class="spot-cost">&#165;5,000</div>
+        
+        
+        <div class="spot-tips">函館→旭川は高速で約4時間。朝イチ出発</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #219（アローラロコン・ディアルガ）東川町</div>
+        
+        <div class="spot-desc">東川町のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">旭川の隣。写真の町</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.698404,142.507039" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #324（アローラロコン・ヒスイウォーグル）美瑛町</div>
+        
+        <div class="spot-desc">美瑛のポケふた。パッチワークの丘</div>
+        
+        
+        
+        <div class="spot-tips">東川から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.59198,142.46372" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #142（アローラロコン・エネコロロ）上富良野町</div>
+        
+        <div class="spot-desc">🎉 50箇所目！！北海道コンプリート！！！🎉</div>
+        
+        
+        
+        <div class="spot-tips">美瑛から車20分。ラベンダーの町でゴール！</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.462246,142.479068" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">富良野メロン＆カレーで祝杯</div>
+        
+        <div class="spot-desc">北海道50箇所コンプ記念！唯我独尊カレーとメロン</div>
+        
+        
+        <div class="spot-cost">&#165;2,000</div>
+        
+        
+        <div class="spot-tips">唯我独尊の自家製ソーセージカレー。コンプおめでとう！</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=43.342,142.383" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 6</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">富良野→旭川空港or新千歳空港→羽田（帰路）</div>
+        
+        <div class="spot-desc">レンタカー返却。旭川空港が近い（車30分）。新千歳なら車2.5時間</div>
+        
+        
+        <div class="spot-cost">&#165;15,000</div>
+        
+        
+        <div class="spot-tips">旭川空港の方が近いが便数少ない。要確認</div>
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">POKEFUTA</span>
+    <h2>ポケふた全50箇所</h2>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">恵庭市（ロコン）<span class="pokefuta-id">#60</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">由仁町（ロコン・アローラロコン・ヤクデ）<span class="pokefuta-id">#440</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">三笠市（ロコン・オムナイト・ズガイドス）<span class="pokefuta-id">#141</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">歌志内市（ロコン・アローラロコン・バチュル）<span class="pokefuta-id">#304</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">砂川市（ロコン・アローラロコン・ペロリーム）<span class="pokefuta-id">#439</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">当別町（アローラロコン・ヤバチャ・ポットデス）<span class="pokefuta-id">#278</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">石狩市（ロコン・ナエトル）<span class="pokefuta-id">#59</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">札幌市（ロコン・ケッキング）<span class="pokefuta-id">#438</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">赤井川村（アローラロコン・バニプッチ・ミブリム）<span class="pokefuta-id">#218</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">小樽市（アローラロコン）<span class="pokefuta-id">#188</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">旭川市（アローラロコン・コオリッポ・クマシュン）<span class="pokefuta-id">#214</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">比布町（アローラロコン・ポッチャマ）<span class="pokefuta-id">#65</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">剣淵町（アローラロコン・ヒトツキ）<span class="pokefuta-id">#143</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">士別市（ロコン・メリープ）<span class="pokefuta-id">#64</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">天塩町（ロコン・アローラロコン）<span class="pokefuta-id">#66</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">幌延町（ロコン・アローラロコン・フラベベ）<span class="pokefuta-id">#442</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">豊富町（アローラロコン・ミルタンク）<span class="pokefuta-id">#68</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">稚内市（アローラロコン・アローラキュウコン）<span class="pokefuta-id">#67</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">猿払村（ロコン・アローラロコン・エイパム）<span class="pokefuta-id">#306</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">紋別市（アローラロコン・タマザラシ）<span class="pokefuta-id">#69</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">湧別町（ロコン・アローラロコン・アブリー）<span class="pokefuta-id">#444</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">遠軽町（アローラロコン・ユキメノコ）<span class="pokefuta-id">#70</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">北見市（ロコン・アローラロコン）<span class="pokefuta-id">#303</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">津別町（ロコン・アローラロコン・メブキジカ）<span class="pokefuta-id">#443</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">美幌町（ロコン・アローラロコン・ハネッコ）<span class="pokefuta-id">#307</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">大空町（ロコン・ムクホーク）<span class="pokefuta-id">#71</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">網走市（アローラロコン・マニューラ）<span class="pokefuta-id">#217</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">斜里町（ロコン・パルキア）<span class="pokefuta-id">#220</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">中標津町（ロコン・ワカシャモ）<span class="pokefuta-id">#193</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">別海町（アローラロコン・トドグラー）<span class="pokefuta-id">#445</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">根室市（アローラロコン・バリコオル）<span class="pokefuta-id">#189</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">釧路市（アローラロコン・ジュナイパー）<span class="pokefuta-id">#215</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">本別町（ロコン・メタモン）<span class="pokefuta-id">#191</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">足寄町（アローラロコン・ユクシー・エムリット・アグノム）<span class="pokefuta-id">#73</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">陸別町（アローラロコン・カチコール）<span class="pokefuta-id">#192</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">新得町（アローラロコン・ヒメグマ）<span class="pokefuta-id">#72</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">帯広市（ロコン・アローラロコン・ドロバンコ）<span class="pokefuta-id">#216</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">えりも町（アローラロコン・ルガルガン）<span class="pokefuta-id">#221</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">苫小牧市（ロコン・キュウコン）<span class="pokefuta-id">#140</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">洞爺湖町（ロコン・ウリムー）<span class="pokefuta-id">#61</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">登別市（ロコン・キテルグマ）<span class="pokefuta-id">#190</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">室蘭市（ロコン・アローラロコン・イルミーゼ）<span class="pokefuta-id">#302</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">森町（アローラロコン・マーイーカ）<span class="pokefuta-id">#62</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">函館市（アローラロコン・トゲキッス）<span class="pokefuta-id">#187</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">木古内町（ロコン・アローラロコン・ヒメンカ）<span class="pokefuta-id">#305</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">上ノ国町（ロコン・ヒコザル）<span class="pokefuta-id">#63</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">厚沢部町（ロコン・アローラロコン・ミノマダム）<span class="pokefuta-id">#441</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">東川町（アローラロコン・ディアルガ）<span class="pokefuta-id">#219</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">美瑛町（アローラロコン・ヒスイウォーグル）<span class="pokefuta-id">#324</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">上富良野町（アローラロコン・エネコロロ）<span class="pokefuta-id">#142</span></div>
+    </div>
+    
+</div>
+
+
+<!-- グルメまとめ -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">GOURMET</span>
+    <h2>ご当地グルメ</h2>
+    <div class="highlights">
+        
+        <span class="highlight-tag">札幌味噌ラーメン</span>
+        
+        <span class="highlight-tag">小樽寿司</span>
+        
+        <span class="highlight-tag">旭川醤油ラーメン</span>
+        
+        <span class="highlight-tag">士別サフォークラム</span>
+        
+        <span class="highlight-tag">稚内タコしゃぶ</span>
+        
+        <span class="highlight-tag">紋別カニ</span>
+        
+        <span class="highlight-tag">知床鮭いくら丼</span>
+        
+        <span class="highlight-tag">根室エスカロップ</span>
+        
+        <span class="highlight-tag">根室花咲ガニ</span>
+        
+        <span class="highlight-tag">帯広豚丼</span>
+        
+        <span class="highlight-tag">新得そば</span>
+        
+        <span class="highlight-tag">富良野メロン</span>
+        
+        <span class="highlight-tag">登別温泉</span>
+        
+        <span class="highlight-tag">洞爺湖温泉</span>
+        
+        <span class="highlight-tag">函館海鮮丼</span>
+        
+        <span class="highlight-tag">ラッキーピエロ</span>
+        
+    </div>
+</div>
+
+
+<!-- 持ち物 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">PACKING</span>
+    <h2>持ち物チェックリスト</h2>
+    <div class="packing-grid">
+        
+        <div class="packing-item">レンタカー6日間必須（走行距離約2,500km）</div>
+        
+        <div class="packing-item">ETCカード必須（高速多用）</div>
+        
+        <div class="packing-item">ガソリン半分で給油（道北・道東はGS少ない）</div>
+        
+        <div class="packing-item">防寒着（夏でも朝晩は10度台）</div>
+        
+        <div class="packing-item">モバイルバッテリー（ナビ＋ポケふた撮影で電池消耗）</div>
+        
+        <div class="packing-item">道北・道東は携帯電波弱い→オフライン地図DL</div>
+        
+        <div class="packing-item">虫除けスプレー（特に道東の湿原エリア）</div>
+        
+    </div>
+</div>
+
+
+<!-- 費用 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">COST</span>
+    <h2>費用まとめ</h2>
+    <table class="cost-table">
+        
+        <tr><td>交通費</td><td>&yen;50,000</td></tr>
+        
+        
+        <tr><td>宿泊</td><td>&yen;36,500</td></tr>
+        
+        
+        <tr><td>食事</td><td>&yen;20,100</td></tr>
+        
+        
+        <tr><td>アクティビティ</td><td>&yen;1,800</td></tr>
+        
+        
+        <tr><td>レンタカー</td><td>&yen;30,000</td></tr>
+        
+        
+        <tr><td>ガソリン</td><td>&yen;15,000</td></tr>
+        
+    </table>
+    
+    <div class="total-box">
+        合計 &yen;153,400
+        
+        （1人あたり &yen;76,700）
+        
+    </div>
+    
+</div>
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a> |
+    <a href="index.html">しおり一覧</a>
+</div>
+
+</body>
+</html>

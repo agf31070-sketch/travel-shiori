@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅のしおりコレクション</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.container { max-width: 800px; margin: 0 auto; }
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 24px;
+}
+.header h1 {
+    color: #1565C0;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+.header p {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.plan-card {
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    padding: 24px;
+    margin: 16px 0;
+    box-shadow: 0 4px 20px rgba(62,135,200,0.12);
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid #1565C0;
+}
+.plan-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(62,135,200,0.2);
+}
+.plan-card.hokkaido { border-left-color: #00BCD4; }
+.plan-card.tohoku { border-left-color: #9C27B0; }
+.plan-card.chubu { border-left-color: #FF9800; }
+.plan-card.kanto { border-left-color: #4CAF50; }
+.plan-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #1565C0;
+    margin-bottom: 6px;
+}
+.plan-dest {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.plan-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.tag-days { background: #E3F2FD; color: #1565C0; }
+.tag-pokefuta { background: #FFF9C4; color: #F57F17; }
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #FF7043;
+    margin: 32px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #FF7043;
+}
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #999;
+    font-size: 0.85rem;
+}
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .header h1 { font-size: 1.6rem; }
+    .plan-card { padding: 18px; }
+    .plan-title { font-size: 1.05rem; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>旅のしおりコレクション</h1>
+    <p>ポケふた巡り × ご当地グルメ × 絶景</p>
+</div>
+
+<div class="section-title">北海道</div>
+
+<a class="plan-card hokkaido" href="shiori_11.html">
+    <div class="plan-title">北海道A：札幌＆函館 ロコン王道ルート</div>
+    <div class="plan-dest">札幌・小樽・函館</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">2泊3日</span>
+        <span class="tag tag-pokefuta">ポケふた 15箇所</span>
+    </div>
+</a>
+
+<a class="plan-card hokkaido" href="shiori_12.html">
+    <div class="plan-title">北海道B：道央〜道北 数稼ぎナンバーハント</div>
+    <div class="plan-dest">旭川・富良野・空知・道北</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">2泊3日</span>
+        <span class="tag tag-pokefuta">ポケふた 19箇所</span>
+    </div>
+</a>
+
+<a class="plan-card hokkaido" href="shiori_13.html">
+    <div class="plan-title">北海道C：ロコン王国ガチコンプ 全50箇所制覇</div>
+    <div class="plan-dest">北海道全域（2,500km走破）</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">5泊6日</span>
+        <span class="tag tag-pokefuta">ポケふた 50箇所</span>
+    </div>
+</a>
+
+<div class="section-title">東北</div>
+
+<a class="plan-card tohoku" href="shiori_9.html">
+    <div class="plan-title">宮城ラプラス王国 2泊3日15ポケふた大回収</div>
+    <div class="plan-dest">仙台・松島・石巻</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">2泊3日</span>
+        <span class="tag tag-pokefuta">ポケふた 15箇所</span>
+    </div>
+</a>
+
+<a class="plan-card tohoku" href="shiori_5.html">
+    <div class="plan-title">福島ラッキー王国 南部10ポケふた巡り</div>
+    <div class="plan-dest">白河・棚倉</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">1泊2日</span>
+        <span class="tag tag-pokefuta">ポケふた 9箇所</span>
+    </div>
+</a>
+
+<div class="section-title">関東</div>
+
+<a class="plan-card kanto" href="shiori_2.html">
+    <div class="plan-title">所沢ドラゴンライン日帰り</div>
+    <div class="plan-dest">所沢</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">日帰り</span>
+        <span class="tag tag-pokefuta">ポケふた 3箇所</span>
+    </div>
+</a>
+
+<a class="plan-card kanto" href="shiori_3.html">
+    <div class="plan-title">千葉・香取 佐原レトロ散歩＆ポケふた4回収</div>
+    <div class="plan-dest">香取市（佐原）</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">日帰り</span>
+        <span class="tag tag-pokefuta">ポケふた 4箇所</span>
+    </div>
+</a>
+
+<a class="plan-card kanto" href="shiori_4.html">
+    <div class="plan-title">茨城ポケふた巡り レックウザ＆水戸コース</div>
+    <div class="plan-dest">つくば・水戸</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">日帰り</span>
+        <span class="tag tag-pokefuta">ポケふた 5箇所</span>
+    </div>
+</a>
+
+<div class="section-title">中部</div>
+
+<a class="plan-card chubu" href="shiori_6.html">
+    <div class="plan-title">新潟・小千谷 コイキング聖地巡礼</div>
+    <div class="plan-dest">小千谷</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">1泊2日</span>
+        <span class="tag tag-pokefuta">ポケふた 4箇所</span>
+    </div>
+</a>
+
+<a class="plan-card chubu" href="shiori_7.html">
+    <div class="plan-title">愛知・豊橋 ポケモン密集4回収＋味噌カツ</div>
+    <div class="plan-dest">豊橋・名古屋</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">1泊2日</span>
+        <span class="tag tag-pokefuta">ポケふた 6箇所</span>
+    </div>
+</a>
+
+<a class="plan-card chubu" href="shiori_8.html">
+    <div class="plan-title">福井 カイリューの里＆恐竜博物館</div>
+    <div class="plan-dest">福井・勝山</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">1泊2日</span>
+        <span class="tag tag-pokefuta">ポケふた 7箇所</span>
+    </div>
+</a>
+
+<a class="plan-card chubu" href="shiori_10.html">
+    <div class="plan-title">静岡・沼津＆伊豆 海鮮とファイヤーの旅</div>
+    <div class="plan-dest">沼津・伊豆・富士</div>
+    <div class="plan-tags">
+        <span class="tag tag-days">1泊2日</span>
+        <span class="tag tag-pokefuta">ポケふた 4箇所</span>
+    </div>
+</a>
+
+<div class="footer">
+    Travel Planner - ポケふた巡り旅行プランナー
+</div>
+
+</div>
+</body>
+</html>

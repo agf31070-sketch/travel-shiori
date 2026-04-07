@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>愛知・豊橋 ポケモン密集4回収＋味噌カツ - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>愛知・豊橋 ポケモン密集4回収＋味噌カツ</h1>
+    
+    <div class="subtitle">豊橋市内にポケふた4つが密集。新幹線で1.5時間とアクセス良好。豊橋カレーうどん・味噌カツも楽しむ1泊2日。名古屋エリア...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">1泊2日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">&#x1F534; ポケふた 6箇所</span>
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">約16,050円/人</span>
+        
+        <span class="cover-tag">豊橋</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">東京駅→豊橋（東海道新幹線こだま 約1.5時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた #271（バクフーン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた #272（アゴジムシ・アブリボン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">豊橋カレーうどんランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">ポケふた #274（カブト・クワガノン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">豊橋総合動植物公園（のんほいパーク）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">ポケふた #273（スターミー・デンヂムシ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">豊橋 宿泊
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（日曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">豊橋→名古屋（JR快速 約50分）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた #404（コイキング・ネッコアラ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">味噌カツランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">ポケふた #406（ピジョット・アローラニャース）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">常滑やきもの散歩道
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:00</span>
+            <span class="route-place">名古屋→東京（東海道新幹線 帰路 約1.5時間）
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">東京駅→豊橋（東海道新幹線こだま 約1.5時間）</div>
+        
+        <div class="spot-desc">こだまなら自由席でゆったり。ぷらっとこだまで格安</div>
+        
+        
+        <div class="spot-cost">&#165;6,600</div>
+        
+        
+        <div class="spot-tips">ぷらっとこだまなら片道6,600円（通常8,800円）</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #271（バクフーン）</div>
+        
+        <div class="spot-desc">豊橋駅エリアのポケふた。炎の御三家バクフーン！</div>
+        
+        
+        
+        <div class="spot-tips">駅から徒歩圏内</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.768863,137.393843" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #272（アゴジムシ・アブリボン）</div>
+        
+        <div class="spot-desc">2つ目。#271から近い</div>
+        
+        
+        
+        <div class="spot-tips">徒歩15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.762599,137.382958" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">豊橋カレーうどんランチ</div>
+        
+        <div class="spot-desc">豊橋名物！底にとろろご飯→カレーうどんの二層構造</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">「勢川本店」「玉川」が元祖。底のとろろご飯を混ぜて二度おいしい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.765,137.389" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #274（カブト・クワガノン）</div>
+        
+        <div class="spot-desc">3つ目。自然史博物館エリア</div>
+        
+        
+        
+        <div class="spot-tips">路面電車or バスで移動</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.72096,137.429448" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">豊橋総合動植物公園（のんほいパーク）</div>
+        
+        <div class="spot-desc">動物園・植物園・自然史博物館・遊園地が一体の大型施設</div>
+        
+        
+        <div class="spot-cost">&#165;600</div>
+        
+        
+        <div class="spot-tips">入園600円。恐竜の全身骨格がすごい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.7165,137.4353" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #273（スターミー・デンヂムシ）</div>
+        
+        <div class="spot-desc">4つ目！豊橋コンプリート！</div>
+        
+        
+        
+        <div class="spot-tips">のんほいパーク近くエリア</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.695901,137.413953" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">豊橋 宿泊</div>
+        
+        <div class="spot-desc">豊橋駅前のビジネスホテルで宿泊</div>
+        
+        
+        <div class="spot-cost">&#165;8,000</div>
+        
+        
+        <div class="spot-tips">駅前に東横INN、ルートインなど多数</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.7633,137.3819" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（日曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">豊橋→名古屋（JR快速 約50分）</div>
+        
+        <div class="spot-desc">新快速で名古屋へ。名古屋エリアのポケふたも回収</div>
+        
+        
+        <div class="spot-cost">&#165;1,340</div>
+        
+        
+        <div class="spot-tips">JR新快速が安くて速い</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #404（コイキング・ネッコアラ）</div>
+        
+        <div class="spot-desc">名古屋市内のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">名古屋市内</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.1831277,136.9045981" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">味噌カツランチ</div>
+        
+        <div class="spot-desc">名古屋の鉄板。八丁味噌の甘辛ソースでいただくカツ</div>
+        
+        
+        <div class="spot-cost">&#165;1,500</div>
+        
+        
+        <div class="spot-tips">「矢場とん」が定番。栄エリアがアクセス良い</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.1706,136.8816" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた #406（ピジョット・アローラニャース）</div>
+        
+        <div class="spot-desc">常滑市のポケふた。中部空港のお膝元</div>
+        
+        
+        
+        <div class="spot-tips">名鉄で常滑へ（約30分）。やきもの散歩道も楽しい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.88566,136.8231592" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">常滑やきもの散歩道</div>
+        
+        <div class="spot-desc">焼き物の窯元が並ぶレトロな散策コース。招き猫の街</div>
+        
+        
+        
+        <div class="spot-tips">無料。土管坂は写真映えスポット</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.8906,136.8348" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">16:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">名古屋→東京（東海道新幹線 帰路 約1.5時間）</div>
+        
+        <div class="spot-desc">名古屋駅から新幹線で帰京</div>
+        
+        
+        <div class="spot-cost">&#165;10,560</div>
+        
+        
+        <div class="spot-tips">のぞみ指定席。お土産は名古屋駅のキヨスクで</div>
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">POKEFUTA</span>
+    <h2>ポケふた全6箇所</h2>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">豊橋市（バクフーン）<span class="pokefuta-id">#271</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">豊橋市（アゴジムシ）<span class="pokefuta-id">#272</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">豊橋市（カブト）<span class="pokefuta-id">#274</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">豊橋市（スターミー）<span class="pokefuta-id">#273</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">名古屋市（コイキング）<span class="pokefuta-id">#404</span></div>
+    </div>
+    
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">常滑市（ピジョット）<span class="pokefuta-id">#406</span></div>
+    </div>
+    
+</div>
+
+
+<!-- グルメまとめ -->
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">GOURMET</span>
+    <h2>ご当地グルメ</h2>
+    <div class="highlights">
+        
+        <span class="highlight-tag">豊橋カレーうどん</span>
+        
+        <span class="highlight-tag">味噌カツ</span>
+        
+        <span class="highlight-tag">手羽先</span>
+        
+        <span class="highlight-tag">ういろう</span>
+        
+    </div>
+</div>
+
+
+<!-- 持ち物 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">PACKING</span>
+    <h2>持ち物チェックリスト</h2>
+    <div class="packing-grid">
+        
+        <div class="packing-item">ぷらっとこだま事前予約</div>
+        
+        <div class="packing-item">路面電車用の小銭</div>
+        
+        <div class="packing-item">歩きやすい靴</div>
+        
+    </div>
+</div>
+
+
+<!-- 費用 -->
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">COST</span>
+    <h2>費用まとめ</h2>
+    <table class="cost-table">
+        
+        <tr><td>交通費</td><td>&yen;18,500</td></tr>
+        
+        
+        <tr><td>宿泊</td><td>&yen;8,000</td></tr>
+        
+        
+        <tr><td>食事</td><td>&yen;5,000</td></tr>
+        
+        
+        <tr><td>アクティビティ</td><td>&yen;600</td></tr>
+        
+        
+        
+    </table>
+    
+    <div class="total-box">
+        合計 &yen;32,100
+        
+        （1人あたり &yen;16,050）
+        
+    </div>
+    
+</div>
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; しおり一覧に戻る</a> |
+    <a href="index.html">しおり一覧</a>
+</div>
+
+</body>
+</html>
