@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>島根 出雲神話＆玉造温泉 縁結びの旅 - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>島根 出雲神話＆玉造温泉 縁結びの旅</h1>
+    
+    <div class="subtitle">姫路から車で約3時間。出雲大社で縁結び祈願、宍道湖の夕日、玉造温泉でのんびり。足立美術館・松江城も巡る充実プラン。</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">1泊2日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">出雲・松江・安来</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:00</span>
+            <span class="route-place">姫路出発→中国道→松江道
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた（安来市 ドジョッチ・バリヤード）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">足立美術館
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">松江城＆堀川遊覧船
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">出雲そばランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">出雲大社
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">ポケふた（出雲市 ワッカネズミ・ラブカス）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">出雲大社門前町 食べ歩き
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">宍道湖の夕日
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:30</span>
+            <span class="route-place">玉造温泉チェックイン
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">19:00</span>
+            <span class="route-place">温泉街そぞろ歩き＆足湯
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（日曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">玉造温泉 朝風呂＆朝食
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">八重垣神社
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">しじみ料理ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">ポケふた（大田市 エルレイド・サザンドラ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">石見銀山（大森地区散策）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">ポケふた（浜田市 オムスター・マッギョ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">島根出発→姫路
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:30</span>
+            <span class="route-place">姫路到着
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">07:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路出発→中国道→松江道</div>
+        
+        <div class="spot-desc">山陽道→中国道→松江道で約3時間。途中の蒜山高原SAで休憩もおすすめ</div>
+        
+        
+        <div class="spot-cost">&#165;4,000</div>
+        
+        
+        <div class="spot-tips">ETC休日割引で片道約4,000円</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（安来市 ドジョッチ・バリヤード）</div>
+        
+        <div class="spot-desc">安来節のどじょうすくいとドジョッチがぴったり！</div>
+        
+        
+        
+        <div class="spot-tips">足立美術館の近く</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.428407,133.259012" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">足立美術館</div>
+        
+        <div class="spot-desc">21年連続日本一の庭園。横山大観のコレクションも圧巻</div>
+        
+        
+        <div class="spot-cost">&#165;2,300</div>
+        
+        
+        <div class="spot-tips">所要約1.5時間。庭園は窓越しに額縁のように見える設計</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.3922,133.2569" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">松江城＆堀川遊覧船</div>
+        
+        <div class="spot-desc">国宝天守を持つ松江城。堀川を船で巡るのがおすすめ</div>
+        
+        
+        <div class="spot-cost">&#165;1,500</div>
+        
+        
+        <div class="spot-tips">天守680円+遊覧船1,500円のセット券あり（1,500円）</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.4743,133.0507" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">出雲そばランチ</div>
+        
+        <div class="spot-desc">松江市内で割子そば。丸い器に盛った出雲名物</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">「神代そば」が老舗。割子3段がスタンダード</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.468,133.049" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">出雲大社</div>
+        
+        <div class="spot-desc">縁結びの総本山！大注連縄は圧巻。カップルで参拝すると良縁がさらに深まるとか</div>
+        
+        
+        
+        <div class="spot-tips">二礼四拍手一礼が出雲式。参道は下り坂で珍しい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.4017,132.6855" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（出雲市 ワッカネズミ・ラブカス）</div>
+        
+        <div class="spot-desc">縁結びの出雲にラブカス！出来すぎた組み合わせ</div>
+        
+        
+        
+        <div class="spot-tips">出雲大社周辺で回収</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.4330088,132.629353" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">出雲大社門前町 食べ歩き</div>
+        
+        <div class="spot-desc">神門通りでぜんざい・出雲ぜんざい発祥の地！</div>
+        
+        
+        <div class="spot-cost">&#165;500</div>
+        
+        
+        <div class="spot-tips">「日本ぜんざい学会」のぜんざいが人気</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.3983,132.686" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">宍道湖の夕日</div>
+        
+        <div class="spot-desc">日本夕陽百選。湖に沈む夕日は絶景。嫁ヶ島のシルエットが美しい</div>
+        
+        
+        
+        <div class="spot-tips">日没30分前にスタンバイ。とるぱ(撮影ポイント)が整備されている</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.447,132.776" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">17:30
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">玉造温泉チェックイン</div>
+        
+        <div class="spot-desc">日本最古の温泉のひとつ。美肌の湯として有名。川沿いの温泉街が風情あり</div>
+        
+        
+        <div class="spot-cost">&#165;18,000</div>
+        
+        
+        <div class="spot-tips">カップルなら佳翠苑 皆美が人気。1人18,000円前後</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.4135,132.993" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">19:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">温泉街そぞろ歩き＆足湯</div>
+        
+        <div class="spot-desc">玉造温泉の川沿いにはおしゃれなカフェや足湯が点在</div>
+        
+        
+        
+        <div class="spot-tips">姫神広場の足湯は24時間無料。勾玉づくり体験もできる</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.413,132.993" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（日曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">玉造温泉 朝風呂＆朝食</div>
+        
+        <div class="spot-desc">チェックアウト前にもう一度温泉を堪能</div>
+        
+        
+        
+        <div class="spot-tips">朝の露天風呂は格別</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.413,132.993" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">八重垣神社</div>
+        
+        <div class="spot-desc">鏡の池占いが有名。和紙に硬貨を乗せて池に浮かべ、沈む速さと距離で縁を占う</div>
+        
+        
+        <div class="spot-cost">&#165;100</div>
+        
+        
+        <div class="spot-tips">占い和紙100円。15分以内に沈むと良縁が近いとか</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.4449,133.0807" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">しじみ料理ランチ</div>
+        
+        <div class="spot-desc">宍道湖名物のヤマトシジミ。しじみバーガーやしじみ丼も</div>
+        
+        
+        <div class="spot-cost">&#165;1,500</div>
+        
+        
+        <div class="spot-tips">「しじみ館」でしじみの佃煮をお土産に</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.468,133.049" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（大田市 エルレイド・サザンドラ）</div>
+        
+        <div class="spot-desc">世界遺産・石見銀山がある大田市</div>
+        
+        
+        
+        <div class="spot-tips">松江から車1時間。9号線沿いの海がきれい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.145782,132.413128" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">石見銀山（大森地区散策）</div>
+        
+        <div class="spot-desc">世界遺産の銀山跡。大森地区のレトロな町並み散策がおすすめ</div>
+        
+        
+        
+        <div class="spot-tips">龍源寺間歩（坑道）見学は500円。自転車レンタルが便利</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=35.112,132.434" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（浜田市 オムスター・マッギョ）</div>
+        
+        <div class="spot-desc">日本海沿いの浜田市</div>
+        
+        
+        
+        <div class="spot-tips">大田から車40分。9号線海岸ドライブ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=34.88924,132.07129" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">島根出発→姫路</div>
+        
+        <div class="spot-desc">浜田道→中国道→山陽道で約3時間</div>
+        
+        
+        <div class="spot-cost">&#165;4,000</div>
+        
+        
+        <div class="spot-tips">浜田道は無料区間あり</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">18:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路到着</div>
+        
+        <div class="spot-desc">お疲れさま！縁結びパワーチャージ完了！</div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+
+<!-- グルメまとめ -->
+
+
+<!-- 持ち物 -->
+
+
+<!-- 費用 -->
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a> |
+    <a href="/history">履歴一覧</a>
+</div>
+
+</body>
+</html>

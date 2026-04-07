@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鹿児島イーブイ全9種コンプ！桜島＆砂むし温泉 - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>鹿児島イーブイ全9種コンプ！桜島＆砂むし温泉</h1>
+    
+    <div class="subtitle">姫路から新幹線みずほで約3.5時間。鹿児島はイーブイ全進化系9種が指宿市に集結！砂むし温泉、桜島、黒豚しゃぶしゃぶ、白熊...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">1泊2日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">鹿児島市・指宿</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:30</span>
+            <span class="route-place">姫路→鹿児島中央（新幹線みずほ 約3.5時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">鹿児島中央駅着→白熊かき氷
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">黒豚しゃぶしゃぶランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">城山展望台
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">仙巌園
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">鹿児島中央→指宿（JR指宿枕崎線 約1時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">指宿到着→イーブイポケふた巡り START！
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:40</span>
+            <span class="route-place">ポケふた① イーブイ
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:50</span>
+            <span class="route-place">ポケふた② シャワーズ
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">ポケふた③ サンダース
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:10</span>
+            <span class="route-place">ポケふた④ ブースター
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:20</span>
+            <span class="route-place">ポケふた⑤ エーフィ
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:30</span>
+            <span class="route-place">ポケふた⑥ ブラッキー
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:40</span>
+            <span class="route-place">砂むし温泉 砂楽
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">19:00</span>
+            <span class="route-place">指宿温泉の宿チェックイン＆夕食
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（日曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">朝風呂＆朝食
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた⑦ リーフィア
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:15</span>
+            <span class="route-place">ポケふた⑧ グレイシア
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">ポケふた⑨ ニンフィア
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">JR日本最南端の駅・西大山駅
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">長崎鼻（龍宮神社）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">指宿→鹿児島中央（JR 約1時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">桜島フェリー
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">桜島ビジターセンター＆湯之平展望所
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">鶏飯（けいはん）ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">さつま揚げ＆お土産購入
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">鹿児島中央→姫路（新幹線みずほ 約3.5時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">20:00</span>
+            <span class="route-place">姫路到着
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">07:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路→鹿児島中央（新幹線みずほ 約3.5時間）</div>
+        
+        <div class="spot-desc">みずほで一本！乗り換えなしで鹿児島中央駅へ</div>
+        
+        
+        <div class="spot-cost">&#165;16,000</div>
+        
+        
+        <div class="spot-tips">みずほ指定席で片道約16,000円。さくらでも可（少し安い）</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">鹿児島中央駅着→白熊かき氷</div>
+        
+        <div class="spot-desc">天文館むじゃきの白熊（しろくま）は鹿児島名物のフルーツかき氷</div>
+        
+        
+        <div class="spot-cost">&#165;800</div>
+        
+        
+        <div class="spot-tips">レギュラーサイズは2人でシェアできるほど大きい</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.5884,130.5571" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">黒豚しゃぶしゃぶランチ</div>
+        
+        <div class="spot-desc">鹿児島黒豚のしゃぶしゃぶ。甘みのある上質な脂が最高</div>
+        
+        
+        <div class="spot-cost">&#165;2,500</div>
+        
+        
+        <div class="spot-tips">いちにいさん or 黒福多がおすすめ。ランチセットがお得</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.589,130.556" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">城山展望台</div>
+        
+        <div class="spot-desc">桜島を正面に望む絶景ポイント。西郷隆盛最後の地</div>
+        
+        
+        
+        <div class="spot-tips">バスで10分。桜島と錦江湾の絶景</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.5989,130.5502" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">仙巌園</div>
+        
+        <div class="spot-desc">島津家の別邸庭園。桜島を借景にした絶景庭園</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">世界遺産構成資産。庭園+尚古集成館セットで1,000円</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.6122,130.5742" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">鹿児島中央→指宿（JR指宿枕崎線 約1時間）</div>
+        
+        <div class="spot-desc">特急「指宿のたまて箱」がおすすめ！白黒の車体がかわいい</div>
+        
+        
+        <div class="spot-cost">&#165;2,200</div>
+        
+        
+        <div class="spot-tips">指宿のたまて箱は全席指定。ドアが開くと白い煙が出る演出</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">指宿到着→イーブイポケふた巡り START！</div>
+        
+        <div class="spot-desc">指宿市内に9箇所のイーブイ進化系が集結！</div>
+        
+        
+        
+        <div class="spot-tips">レンタサイクルか徒歩で回れる範囲に密集</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.237194,130.642861" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:40
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた① イーブイ</div>
+        
+        <div class="spot-desc">全ての始まり！イーブイ本体のポケふた</div>
+        
+        
+        
+        <div class="spot-tips">指宿駅の近く</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.237194,130.642861" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:50
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた② シャワーズ</div>
+        
+        <div class="spot-desc">水タイプ進化！海の街・指宿にぴったり</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.228,130.653028" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた③ サンダース</div>
+        
+        <div class="spot-desc">電気タイプ進化！</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.255278,130.647639" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:10
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた④ ブースター</div>
+        
+        <div class="spot-desc">炎タイプ進化！</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.229417,130.651972" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:20
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた⑤ エーフィ</div>
+        
+        <div class="spot-desc">エスパータイプ進化！</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.238278,130.645" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた⑥ ブラッキー</div>
+        
+        <div class="spot-desc">悪タイプ進化！</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.236833,130.642188" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">17:40
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">砂むし温泉 砂楽</div>
+        
+        <div class="spot-desc">世界で唯一の天然砂むし温泉！波打ち際で砂に埋まる体験</div>
+        
+        
+        <div class="spot-cost">&#165;1,100</div>
+        
+        
+        <div class="spot-tips">1,100円（浴衣付き）。15分が目安。デトックス効果抜群</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.2282,130.6386" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">19:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">指宿温泉の宿チェックイン＆夕食</div>
+        
+        <div class="spot-desc">指宿の温泉旅館でゆっくり。鹿児島の郷土料理を堪能</div>
+        
+        
+        <div class="spot-cost">&#165;15,000</div>
+        
+        
+        <div class="spot-tips">指宿白水館がカップルに人気。1人15,000円前後</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.237,130.643" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（日曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">朝風呂＆朝食</div>
+        
+        <div class="spot-desc">宿の温泉を朝一番で堪能</div>
+        
+        
+        
+        <div class="spot-tips">朝の露天風呂から開聞岳が見える</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.237,130.643" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた⑦ リーフィア</div>
+        
+        <div class="spot-desc">草タイプ進化！指宿の南側</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.263889,130.662917" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:15
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた⑧ グレイシア</div>
+        
+        <div class="spot-desc">氷タイプ進化！</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.231056,130.644611" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた⑨ ニンフィア</div>
+        
+        <div class="spot-desc">フェアリータイプ進化！これでイーブイ全9種コンプリート！！</div>
+        
+        
+        
+        <div class="spot-tips">全9種制覇おめでとう！！</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.235444,130.641389" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">JR日本最南端の駅・西大山駅</div>
+        
+        <div class="spot-desc">開聞岳をバックにした絶景駅。幸せを届ける黄色いポスト</div>
+        
+        
+        
+        <div class="spot-tips">指宿から車15分。写真映え抜群</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.1947,130.5532" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">長崎鼻（龍宮神社）</div>
+        
+        <div class="spot-desc">薩摩半島の最南端。開聞岳と海の絶景。浦島太郎伝説の地</div>
+        
+        
+        
+        <div class="spot-tips">駐車場から徒歩5分。灯台からの眺めが◎</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.1792,130.5703" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">指宿→鹿児島中央（JR 約1時間）</div>
+        
+        <div class="spot-desc">指宿線で鹿児島中央へ戻る</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">車窓から桜島＆錦江湾の景色</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">桜島フェリー</div>
+        
+        <div class="spot-desc">鹿児島港から15分で桜島へ。24時間運航</div>
+        
+        
+        <div class="spot-cost">&#165;200</div>
+        
+        
+        <div class="spot-tips">大人200円。フェリーうどんが名物（船内で食べる）</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">桜島ビジターセンター＆湯之平展望所</div>
+        
+        <div class="spot-desc">桜島に一番近い展望所。噴煙を間近に見られる</div>
+        
+        
+        
+        <div class="spot-tips">周遊バス（サクラジマアイランドビュー）500円が便利</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.5826,130.6403" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">鶏飯（けいはん）ランチ</div>
+        
+        <div class="spot-desc">奄美大島名物が鹿児島でも。鶏スープをかけるお茶漬け風</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">天文館の「ひさ倉」が人気</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.588,130.557" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">さつま揚げ＆お土産購入</div>
+        
+        <div class="spot-desc">揚立屋の揚げたてさつま揚げはお土産にも最高</div>
+        
+        
+        <div class="spot-cost">&#165;500</div>
+        
+        
+        <div class="spot-tips">揚立屋で揚げたてを食べてからお土産用も買う</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.589,130.557" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">鹿児島中央→姫路（新幹線みずほ 約3.5時間）</div>
+        
+        <div class="spot-desc">みずほで直行！</div>
+        
+        
+        <div class="spot-cost">&#165;16,000</div>
+        
+        
+        <div class="spot-tips">駅のお土産屋でかるかん・かすたどんも</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">20:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路到着</div>
+        
+        <div class="spot-desc">お疲れさま！イーブイ全9種制覇！！</div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+
+<!-- グルメまとめ -->
+
+
+<!-- 持ち物 -->
+
+
+<!-- 費用 -->
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a> |
+    <a href="/history">履歴一覧</a>
+</div>
+
+</body>
+</html>

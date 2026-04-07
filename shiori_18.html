@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮崎ナッシー王国 高千穂＆チキン南蛮2泊3日 - 旅のしおり</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #E0F7FA 0%, #F3E5F5 50%, #FFF8E1 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(62, 135, 200, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #2196F3;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 {
+    color: #1565C0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    text-align: center;
+    line-height: 1.4;
+}
+h2 {
+    color: #1565C0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed #1565C040;
+}
+h3 {
+    color: #FF7043;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.subtitle {
+    color: #FF7043;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.cover-slide {
+    text-align: center;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, #81D4FA60, #CE93D860, #FFF17640);
+}
+.cover-slide h1 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.8);
+}
+.cover-slide .date {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.cover-tag {
+    background: rgba(255,255,255,0.7);
+    color: #1565C0;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.route-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 16px 0;
+}
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    position: relative;
+}
+.route-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 23px; bottom: -2px;
+    width: 2px; height: 16px;
+    background: #1565C060;
+}
+.route-time {
+    background: #1565C0;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    min-width: 56px;
+    text-align: center;
+}
+.route-place {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1565C0;
+    flex: 1;
+}
+.route-note {
+    font-size: 0.8rem;
+    color: #FF7043;
+}
+.cat-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+.cat-pokefuta { background: #FFF176; color: #F57F17; }
+.cat-food { background: #FFCC80; color: #E65100; }
+.cat-sightseeing { background: #81D4FA; color: #01579B; }
+.cat-stay { background: #CE93D8; color: #6A1B9A; }
+.cat-move { background: #CFD8DC; color: #455A64; }
+.transport-box {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 12px 0;
+    border: 2px dashed #1565C040;
+}
+.train-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1565C0;
+    margin-bottom: 4px;
+}
+.detail-item {
+    padding: 4px 0 4px 16px;
+    position: relative;
+    font-size: 0.95rem;
+}
+.detail-item::before {
+    content: '\2728';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 12px 0;
+    background: rgba(255,255,255,0.5);
+    border-radius: 16px;
+    padding: 16px;
+}
+.info-label {
+    font-weight: 700;
+    color: #1565C0;
+    white-space: nowrap;
+}
+.info-value { color: #4A4A4A; }
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+.highlight-tag {
+    background: #1565C0;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.spot-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 10px 0;
+    border-left: 4px solid #81D4FA;
+}
+.spot-card.cat-pokefuta-card { border-left-color: #FDD835; }
+.spot-card.cat-food-card { border-left-color: #FF7043; }
+.spot-card.cat-stay-card { border-left-color: #CE93D8; }
+.spot-card.cat-move-card { border-left-color: #CFD8DC; }
+.spot-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #4A4A4A;
+    margin-bottom: 4px;
+}
+.spot-time {
+    display: inline-block;
+    background: #1565C020;
+    color: #1565C0;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.spot-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 4px;
+}
+.spot-tips {
+    font-size: 0.85rem;
+    color: #FF7043;
+    font-style: italic;
+}
+.spot-cost {
+    font-weight: 700;
+    color: #1565C0;
+    font-size: 0.9rem;
+}
+.map-link {
+    display: inline-block;
+    background: #1565C0;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 6px;
+    transition: opacity 0.2s;
+}
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.pokefuta-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px 0;
+    border-left: 4px solid #FDD835;
+}
+.pokefuta-pokemon {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #F57F17;
+}
+.pokefuta-id {
+    display: inline-block;
+    background: #FFF176;
+    color: #F57F17;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+}
+.pokefuta-location {
+    color: #888;
+    font-size: 0.85rem;
+}
+.warning-box {
+    background: #FFF3CD;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    border-left: 4px solid #FFB347;
+    font-size: 0.9rem;
+}
+.warning-box::before { content: '\26A0\FE0F '; }
+.packing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+.packing-item {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.packing-item::before {
+    content: '\2714';
+    color: #1565C0;
+    font-weight: 700;
+}
+.cost-table {
+    width: 100%;
+    margin: 12px 0;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+}
+.cost-table td {
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+.cost-table td:first-child {
+    border-radius: 10px 0 0 10px;
+    font-weight: 700;
+    color: #FF7043;
+}
+.cost-table td:last-child {
+    border-radius: 0 10px 10px 0;
+    text-align: right;
+    font-weight: 700;
+    color: #1565C0;
+}
+.total-box {
+    background: #1565C0;
+    color: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+.day-divider {
+    max-width: 800px;
+    margin: 32px auto 0;
+    padding: 16px 24px;
+    background: #1565C0;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+.back-link a {
+    color: #1565C0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.back-link a:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+    .route-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a>
+</div>
+
+<!-- 表紙 -->
+<div class="slide cover-slide">
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <h1>宮崎ナッシー王国 高千穂＆チキン南蛮2泊3日</h1>
+    
+    <div class="subtitle">姫路から新幹線+レンタカー。宮崎は全26箇所ナッシー王国！高千穂峡のボート、チキン南蛮、日南海岸のモアイ、温泉と南国気分...</div>
+    
+    <div class="cover-deco">&#10024;&#127752;&#10024;</div>
+    <div class="date">2泊3日</div>
+    <div class="cover-tags">
+        
+        <span class="cover-tag">2人旅</span>
+        
+        <span class="cover-tag">高千穂・宮崎市・日南</span>
+    </div>
+</div>
+
+<!-- ルート全体 -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+    
+    <h3>1日目（金曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">07:30</span>
+            <span class="route-place">姫路→小倉（新幹線のぞみ 約1.5時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">小倉駅レンタカー出発
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:30</span>
+            <span class="route-place">高千穂到着→ランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">ポケふた（高千穂町 ナッシー・レジギガス）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:00</span>
+            <span class="route-place">高千穂峡ボート
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">天岩戸神社＆天安河原
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">ポケふた（五ヶ瀬町 ナッシー・レジアイス）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">ポケふた（日之影町 ナッシー・レジスチル）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:00</span>
+            <span class="route-place">高千穂の宿チェックイン
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">20:00</span>
+            <span class="route-place">高千穂神楽（夜神楽）
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>2日目（土曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">高千穂出発→宮崎市方面へ南下
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた（諸塚村 ナッシー・レジロック）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた（椎葉村 ナッシー・シンボラー）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた（美郷町 ナッシー・タマタマ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた（西都市 ナッシー・キマワリ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">宮崎市到着→チキン南蛮ランチ！
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">ポケふた（宮崎市 ナッシー・ポワルン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">青島神社
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">14:30</span>
+            <span class="route-place">ポケふた（日南市 アローラナッシー・ダイノーズ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">サンメッセ日南（モアイ像）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:45</span>
+            <span class="route-place">鵜戸神宮
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">ポケふた（串間市 ナッシー・ガラルポニータ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">18:00</span>
+            <span class="route-place">宮崎市内ホテルチェックイン
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">19:00</span>
+            <span class="route-place">地鶏炭火焼き＆冷や汁ディナー
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+    </div>
+    
+    <h3>3日目（日曜日）</h3>
+    <div class="route-timeline">
+        
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">宮崎市出発→北部ポケふた回収
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">ポケふた（新富町 アローラナッシー・マクノシタ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:00</span>
+            <span class="route-place">ポケふた（高鍋町 アローラナッシー・アローラライチュウ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:20</span>
+            <span class="route-place">ポケふた（川南町 ナッシー・ヌマクロー）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">09:40</span>
+            <span class="route-place">ポケふた（都農町 アローラナッシー・ブイゼル）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">ポケふた（木城町 ナッシー・メタモン）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">ポケふた（日向市 ナッシー・オドリドリ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:00</span>
+            <span class="route-place">ポケふた（門川町 アローラナッシー・マケンカニ）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">11:30</span>
+            <span class="route-place">ポケふた（延岡市 ナッシー・アローラナッシー）
+                <span class="cat-badge cat-pokefuta">PF</span>
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">延岡でチキン南蛮orレタス巻きランチ
+                
+                <span class="cat-badge cat-food">食</span>
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">13:00</span>
+            <span class="route-place">延岡→小倉（東九州道 約2.5時間）
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">15:30</span>
+            <span class="route-place">小倉レンタカー返却→新幹線
+                
+                
+            </span>
+        </div>
+        
+        <div class="route-item">
+            <span class="route-time">17:00</span>
+            <span class="route-place">姫路到着
+                
+                
+            </span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<!-- 各日の詳細 -->
+
+<div class="day-divider">DAY 1 - 1日目（金曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">07:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路→小倉（新幹線のぞみ 約1.5時間）</div>
+        
+        <div class="spot-desc">のぞみで小倉へ。ここでレンタカーに乗り換え</div>
+        
+        
+        <div class="spot-cost">&#165;9,000</div>
+        
+        
+        <div class="spot-tips">片道約9,000円。小倉でレンタカーを借りて南下</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">小倉駅レンタカー出発</div>
+        
+        <div class="spot-desc">小倉から高速で高千穂へ約3.5時間</div>
+        
+        
+        <div class="spot-cost">&#165;5,000</div>
+        
+        
+        <div class="spot-tips">レンタカー2泊3日で約15,000円（5,000円/日）</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:30
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">高千穂到着→ランチ</div>
+        
+        <div class="spot-desc">高千穂牛のステーキ丼 or チキン南蛮定食</div>
+        
+        
+        <div class="spot-cost">&#165;1,500</div>
+        
+        
+        <div class="spot-tips">高千穂牛は和牛の隠れた名品</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.707,131.306" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（高千穂町 ナッシー・レジギガス）</div>
+        
+        <div class="spot-desc">神話の里・高千穂にレジギガス！神々しい組み合わせ</div>
+        
+        
+        
+        <div class="spot-tips">高千穂峡の近く</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.707748,131.305889" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">14:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">高千穂峡ボート</div>
+        
+        <div class="spot-desc">真名井の滝を間近で見られるボートは絶対体験すべき！エメラルドグリーンの水面が神秘的</div>
+        
+        
+        <div class="spot-cost">&#165;5,100</div>
+        
+        
+        <div class="spot-tips">ボート30分5,100円/隻。予約推奨（混雑期は2時間待ちも）</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.6974,131.3056" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">天岩戸神社＆天安河原</div>
+        
+        <div class="spot-desc">天照大御神が隠れた洞窟。天安河原は積み石が幻想的</div>
+        
+        
+        
+        <div class="spot-tips">無料ガイドあり（西本宮）。天安河原は徒歩10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.7277,131.2521" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（五ヶ瀬町 ナッシー・レジアイス）</div>
+        
+        <div class="spot-desc">日本最南端の天然スキー場がある町！</div>
+        
+        
+        
+        <div class="spot-tips">高千穂から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.679051,131.210041" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（日之影町 ナッシー・レジスチル）</div>
+        
+        <div class="spot-desc">レジ系3体が宮崎北部に集結！</div>
+        
+        
+        
+        <div class="spot-tips">五ヶ瀬から車20分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.660643,131.388639" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">18:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">高千穂の宿チェックイン</div>
+        
+        <div class="spot-desc">高千穂の旅館で神楽を鑑賞しながら夕食</div>
+        
+        
+        <div class="spot-cost">&#165;12,000</div>
+        
+        
+        <div class="spot-tips">高千穂離れの宿 神隠れが人気。1人12,000円前後</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.707,131.306" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 1</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">20:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">高千穂神楽（夜神楽）</div>
+        
+        <div class="spot-desc">高千穂神社で毎晩20時から奉納される神楽。33番中4番を公開</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">1,000円。1時間。事前に席確保がおすすめ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.7111,131.3058" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 2 - 2日目（土曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">高千穂出発→宮崎市方面へ南下</div>
+        
+        <div class="spot-desc">内陸ルートでポケふた回収しながら南下</div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（諸塚村 ナッシー・レジロック）</div>
+        
+        <div class="spot-desc">山の中の秘境・諸塚村</div>
+        
+        
+        
+        <div class="spot-tips">高千穂から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.509811,131.331498" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（椎葉村 ナッシー・シンボラー）</div>
+        
+        <div class="spot-desc">日本三大秘境のひとつ！平家落人の里</div>
+        
+        
+        
+        <div class="spot-tips">諸塚から車40分。山道注意</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.458153,131.153831" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（美郷町 ナッシー・タマタマ）</div>
+        
+        <div class="spot-desc">タマタマ→ナッシーの進化コンビ！</div>
+        
+        
+        
+        <div class="spot-tips">椎葉から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.431976,131.467551" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（西都市 ナッシー・キマワリ）</div>
+        
+        <div class="spot-desc">西都原古墳群がある歴史の街</div>
+        
+        
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.106625,131.404508" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">宮崎市到着→チキン南蛮ランチ！</div>
+        
+        <div class="spot-desc">元祖チキン南蛮の「おぐら」で本場の味！タルタルたっぷり</div>
+        
+        
+        <div class="spot-cost">&#165;1,200</div>
+        
+        
+        <div class="spot-tips">おぐら本店（瀬頭町）が元祖。チキン南蛮定食1,200円</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.9107,131.4239" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（宮崎市 ナッシー・ポワルン）</div>
+        
+        <div class="spot-desc">県庁所在地のポケふた！天気の子ポワルン</div>
+        
+        
+        
+        <div class="spot-tips">宮崎駅周辺</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.807505,131.457839" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">13:30
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">青島神社</div>
+        
+        <div class="spot-desc">亜熱帯植物に囲まれた海の神社。縁結びのパワースポット</div>
+        
+        
+        
+        <div class="spot-tips">鬼の洗濯板（波状岩）も見られる。島全体がパワースポット</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.8024,131.469" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">14:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（日南市 アローラナッシー・ダイノーズ）</div>
+        
+        <div class="spot-desc">日南海岸沿いをドライブしながら</div>
+        
+        
+        
+        <div class="spot-tips">海岸沿いのドライブが最高</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.58793,131.4017058" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">15:00
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">サンメッセ日南（モアイ像）</div>
+        
+        <div class="spot-desc">イースター島公認の復刻モアイ像7体。太平洋を望む絶景</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">入園1,000円。カートで移動も可。写真映え最高</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.6173,131.4514" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card ">
+        <div class="spot-time">15:45
+            <span class="cat-badge cat-sightseeing">観光</span>
+            
+        </div>
+        <div class="spot-title">鵜戸神宮</div>
+        
+        <div class="spot-desc">断崖の洞窟に鎮座する神社。運玉投げが名物</div>
+        
+        
+        
+        <div class="spot-tips">運玉（5個100円）を亀石の窪みに投げ入れると願いが叶う</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.578,131.4445" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">16:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（串間市 ナッシー・ガラルポニータ）</div>
+        
+        <div class="spot-desc">都井岬の野生馬で有名な串間</div>
+        
+        
+        
+        <div class="spot-tips">日南から車40分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.36627,131.332809" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-stay-card">
+        <div class="spot-time">18:00
+            <span class="cat-badge cat-stay">宿泊</span>
+            
+        </div>
+        <div class="spot-title">宮崎市内ホテルチェックイン</div>
+        
+        <div class="spot-desc">宮崎市内のホテルでゆっくり</div>
+        
+        
+        <div class="spot-cost">&#165;8,000</div>
+        
+        
+        <div class="spot-tips">JR九州ホテル宮崎が駅近で便利。1人4,000円台</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.911,131.424" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 2</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">19:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">地鶏炭火焼き＆冷や汁ディナー</div>
+        
+        <div class="spot-desc">宮崎の夜は地鶏の炭火焼きで！冷や汁もセットで</div>
+        
+        
+        <div class="spot-cost">&#165;3,000</div>
+        
+        
+        <div class="spot-tips">ぐんけいが人気。地鶏の炭火焼きはモモ焼きがおすすめ</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=31.911,131.424" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+<div class="day-divider">DAY 3 - 3日目（日曜日）</div>
+
+
+
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">08:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">宮崎市出発→北部ポケふた回収</div>
+        
+        <div class="spot-desc">宮崎市から北上してポケふた回収</div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">08:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（新富町 アローラナッシー・マクノシタ）</div>
+        
+        <div class="spot-desc">自衛隊基地がある新富町</div>
+        
+        
+        
+        <div class="spot-tips">宮崎市から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.073902,131.495719" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（高鍋町 アローラナッシー・アローラライチュウ）</div>
+        
+        <div class="spot-desc">高鍋城址がある城下町</div>
+        
+        
+        
+        <div class="spot-tips">新富から車10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.115956,131.532841" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:20
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（川南町 ナッシー・ヌマクロー）</div>
+        
+        <div class="spot-desc">畜産の町・川南</div>
+        
+        
+        
+        <div class="spot-tips">高鍋から車10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.191491,131.528984" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">09:40
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（都農町 アローラナッシー・ブイゼル）</div>
+        
+        <div class="spot-desc">都農ワインで有名</div>
+        
+        
+        
+        <div class="spot-tips">川南から車10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.2609016,131.5575768" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（木城町 ナッシー・メタモン）</div>
+        
+        <div class="spot-desc">石城の里がある木城</div>
+        
+        
+        
+        <div class="spot-tips">都農から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.1682457,131.4782857" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">10:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（日向市 ナッシー・オドリドリ）</div>
+        
+        <div class="spot-desc">日向灘の美しい海！</div>
+        
+        
+        
+        <div class="spot-tips">木城から車30分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.4253924,131.6277364" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:00
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（門川町 アローラナッシー・マケンカニ）</div>
+        
+        <div class="spot-desc">カンムリウミスズメの繁殖地</div>
+        
+        
+        
+        <div class="spot-tips">日向から車10分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.487021,131.676733" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #CE93D830, #CE93D860);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-pokefuta-card">
+        <div class="spot-time">11:30
+            <span class="cat-badge cat-pokefuta">ポケふた</span>
+            
+        </div>
+        <div class="spot-title">ポケふた（延岡市 ナッシー・アローラナッシー）</div>
+        
+        <div class="spot-desc">ナッシー＆アローラナッシーの共演！</div>
+        
+        
+        
+        <div class="spot-tips">門川から車15分</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.684711,131.801103" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #E0F7FA30, #E0F7FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-food-card">
+        <div class="spot-time">12:00
+            <span class="cat-badge cat-food">グルメ</span>
+            
+        </div>
+        <div class="spot-title">延岡でチキン南蛮orレタス巻きランチ</div>
+        
+        <div class="spot-desc">延岡は「チキン南蛮発祥の地」の一つ。直ちゃんの甘酢だれバージョンも有名</div>
+        
+        
+        <div class="spot-cost">&#165;1,000</div>
+        
+        
+        <div class="spot-tips">直ちゃんはタルタルなしの元祖スタイル</div>
+        
+        
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=32.685,131.801" target="_blank">マップ</a>
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">13:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">延岡→小倉（東九州道 約2.5時間）</div>
+        
+        <div class="spot-desc">東九州道で北上して小倉へ</div>
+        
+        
+        <div class="spot-cost">&#165;4,000</div>
+        
+        
+        <div class="spot-tips">高速代約4,000円</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #FFCC8030, #FFCC8060);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">15:30
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">小倉レンタカー返却→新幹線</div>
+        
+        <div class="spot-desc">レンタカー返却して新幹線で姫路へ</div>
+        
+        
+        <div class="spot-cost">&#165;9,000</div>
+        
+        
+        <div class="spot-tips">のぞみで約1.5時間</div>
+        
+        
+    </div>
+</div>
+
+
+
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA30, #81D4FA60);">
+    <span class="slide-number">DAY 3</span>
+
+    <div class="spot-card cat-move-card">
+        <div class="spot-time">17:00
+            <span class="cat-badge cat-move">移動</span>
+            
+        </div>
+        <div class="spot-title">姫路到着</div>
+        
+        <div class="spot-desc">お疲れさま！ナッシー王国大回収完了！26箇所中20箇所制覇！</div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<!-- ポケふた一覧 -->
+
+
+<!-- グルメまとめ -->
+
+
+<!-- 持ち物 -->
+
+
+<!-- 費用 -->
+
+
+<!-- フッター -->
+<div class="slide" style="background: linear-gradient(135deg, #81D4FA60, #CE93D860); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #1565C0;">
+        いってらっしゃい！&#10024;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        Generated by Travel Planner
+    </p>
+</div>
+
+<div class="back-link">
+    <a href="index.html">&larr; プランビューに戻る</a> |
+    <a href="/history">履歴一覧</a>
+</div>
+
+</body>
+</html>
