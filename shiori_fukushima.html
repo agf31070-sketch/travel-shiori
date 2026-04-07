@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>福島ラッキー温泉旅 しおり (kawaii)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic Pro', 'BIZ UDGothic', sans-serif;
+    background: linear-gradient(135deg, #FFF0F5 0%, #F0F8FF 50%, #FFF8DC 100%);
+    color: #4A4A4A;
+    padding: 20px;
+    min-height: 100vh;
+}
+.slide {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 40px 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(212, 96, 122, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+.slide-number {
+    display: inline-block;
+    background: #D4607A;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+h1 { color: #D4607A; font-size: 2rem; font-weight: 900; margin-bottom: 8px; text-align: center; line-height: 1.4; }
+h2 { color: #D4607A; font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 3px dashed #D4607A40; }
+h3 { color: #5B9BD5; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.subtitle { color: #5B9BD5; font-size: 1.2rem; font-weight: 700; text-align: center; margin-bottom: 4px; }
+.cover-slide { text-align: center; padding: 60px 32px; }
+.cover-slide h1 { font-size: 2.4rem; margin-bottom: 16px; text-shadow: 2px 2px 0 rgba(255,255,255,0.8); }
+.cover-slide .date { display: inline-block; background: #D4607A; color: #fff; padding: 8px 24px; border-radius: 30px; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.1em; }
+.cover-deco { font-size: 2rem; margin: 16px 0; }
+.cover-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+.cover-tag { background: rgba(255,255,255,0.7); color: #D4607A; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
+.route-timeline { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.route-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; position: relative; }
+.route-item:not(:last-child)::after { content: ''; position: absolute; left: 23px; bottom: -2px; width: 2px; height: 16px; background: #D4607A60; }
+.route-time { background: #D4607A; color: #fff; padding: 4px 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; min-width: 56px; text-align: center; }
+.route-place { font-weight: 700; font-size: 1.05rem; color: #D4607A; flex: 1; }
+.route-note { font-size: 0.8rem; color: #5B9BD5; }
+.transport-box { background: rgba(255,255,255,0.6); border-radius: 16px; padding: 20px; margin: 12px 0; border: 2px dashed #D4607A40; }
+.train-name { font-size: 1.2rem; font-weight: 700; color: #D4607A; margin-bottom: 8px; }
+.train-route { font-size: 1rem; font-weight: 700; color: #5B9BD5; margin-bottom: 12px; }
+.detail-item { padding: 4px 0; padding-left: 16px; position: relative; }
+.detail-item::before { content: '\2728'; position: absolute; left: 0; font-size: 0.8rem; }
+.info-grid { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 16px 0; background: rgba(255,255,255,0.5); border-radius: 16px; padding: 16px; }
+.info-label { font-weight: 700; color: #D4607A; white-space: nowrap; }
+.info-value { color: #4A4A4A; }
+.highlights { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.highlight-tag { background: #D4607A; color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; }
+.restaurant-card { background: rgba(255,255,255,0.6); border-radius: 16px; padding: 16px; margin: 10px 0; border-left: 4px solid #5B9BD5; }
+.restaurant-card.recommended { border-left: 4px solid #D4607A; box-shadow: 0 4px 16px rgba(212, 96, 122, 0.15); }
+.rec-badge { display: inline-block; background: #D4607A; color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+.restaurant-name { font-weight: 700; font-size: 1rem; color: #4A4A4A; margin-bottom: 4px; }
+.restaurant-price { color: #D4607A; font-weight: 700; }
+.restaurant-note { color: #888; font-size: 0.85rem; }
+.pokefuta-card { background: rgba(255,255,255,0.6); border-radius: 16px; padding: 16px; margin: 10px 0; border-left: 4px solid #FFD700; }
+.pokefuta-pokemon { font-weight: 700; font-size: 1rem; color: #F57F17; margin-bottom: 4px; }
+.pokefuta-id { display: inline-block; background: #FFF176; color: #F57F17; font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; font-weight: 700; margin-left: 8px; }
+.pokefuta-location { color: #888; font-size: 0.85rem; }
+.warning-box { background: #FFF3CD; border-radius: 12px; padding: 12px 16px; margin-top: 12px; border-left: 4px solid #FFB347; font-size: 0.9rem; }
+.warning-box::before { content: '\26A0\FE0F '; }
+.time-badge { display: inline-block; background: #5B9BD520; color: #5B9BD5; padding: 4px 12px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; }
+.map-link { display: inline-block; background: #D4607A; color: #fff; text-decoration: none; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-top: 6px; transition: opacity 0.2s; }
+.map-link:hover { opacity: 0.8; }
+.map-link::before { content: '\1F4CD '; }
+.packing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+.packing-item { background: rgba(255,255,255,0.5); border-radius: 12px; padding: 10px 14px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+.packing-item::before { content: '\2714'; color: #D4607A; font-weight: 700; }
+.cost-table { width: 100%; margin: 12px 0; border-collapse: separate; border-spacing: 0 6px; }
+.cost-table td { padding: 8px 12px; background: rgba(255,255,255,0.5); font-size: 0.9rem; }
+.cost-table td:first-child { border-radius: 10px 0 0 10px; font-weight: 700; color: #5B9BD5; }
+.cost-table td:last-child { border-radius: 0 10px 10px 0; text-align: right; font-weight: 700; color: #D4607A; }
+.total-box { background: #D4607A; color: #fff; border-radius: 16px; padding: 14px 20px; font-weight: 700; text-align: center; font-size: 1rem; margin-top: 8px; }
+.day-divider { max-width: 800px; margin: 32px auto 0; padding: 16px 24px; background: #D4607A; color: #fff; border-radius: 20px; text-align: center; font-size: 1.3rem; font-weight: 900; letter-spacing: 0.1em; }
+.onsen-card { background: linear-gradient(135deg, rgba(255,182,193,0.3), rgba(255,228,181,0.3)); border-radius: 16px; padding: 20px; margin: 12px 0; border: 2px solid #D4607A40; }
+.onsen-title { font-size: 1.2rem; font-weight: 900; color: #D4607A; margin-bottom: 8px; }
+.back-link { display: block; max-width: 800px; margin: 20px auto; text-align: center; }
+.back-link a { color: #D4607A; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+@media (max-width: 600px) {
+    body { padding: 12px; }
+    .slide { padding: 28px 20px; margin: 16px auto; border-radius: 18px; }
+    h1 { font-size: 1.6rem; }
+    .cover-slide h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.3rem; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .route-note { display: block; margin-left: 68px; margin-top: 2px; }
+}
+</style>
+</head>
+<body>
+
+<div class="back-link"><a href="index.html">&larr; しおり一覧に戻る</a></div>
+
+<!-- ====== 表紙 ====== -->
+<div class="slide cover-slide" style="background: linear-gradient(135deg, #FFB6C140, #87CEEB40, #FFE4B540);">
+    <div class="cover-deco">&#9832;&#127800;&#9832;</div>
+    <h1>福島ラッキー温泉旅</h1>
+    <div class="subtitle">ポケふた10箇所 &times; 東山温泉 &times; 名物グルメ</div>
+    <div class="cover-deco">&#9832;&#127800;&#9832;</div>
+    <div class="date">1泊2日</div>
+    <div class="cover-tags">
+        <span class="cover-tag">ポケふた 10箇所</span>
+        <span class="cover-tag">2人旅</span>
+        <span class="cover-tag">東山温泉</span>
+        <span class="cover-tag">新幹線＋レンタカー</span>
+    </div>
+</div>
+
+<!-- ====== ルート全体 ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #87CEEB30, #87CEEB60);">
+    <span class="slide-number">ROUTE</span>
+    <h2>旅のルート</h2>
+
+    <h3>1日目：福島市→猪苗代→会津若松</h3>
+    <div class="route-timeline">
+        <div class="route-item">
+            <span class="route-time">08:00</span>
+            <span class="route-place">東京駅 出発</span>
+            <span class="route-note">やまびこ</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">09:30</span>
+            <span class="route-place">福島駅 → レンタカー</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">10:00</span>
+            <span class="route-place">福島市ポケふた＆円盤餃子</span>
+            <span class="route-note">PF 1箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">二本松ポケふた</span>
+            <span class="route-note">PF 1箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">猪苗代＆五色沼</span>
+            <span class="route-note">PF 2箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">会津若松ポケふた</span>
+            <span class="route-note">PF 1箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">17:30</span>
+            <span class="route-place">東山温泉 チェックイン</span>
+        </div>
+    </div>
+
+    <h3>2日目：会津若松→周辺→郡山→帰京</h3>
+    <div class="route-timeline">
+        <div class="route-item">
+            <span class="route-time">08:30</span>
+            <span class="route-place">鶴ヶ城</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">10:30</span>
+            <span class="route-place">会津周辺ポケふた</span>
+            <span class="route-note">PF 3箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">12:00</span>
+            <span class="route-place">柳津（赤べこの里）</span>
+            <span class="route-note">PF 1箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">13:30</span>
+            <span class="route-place">喜多方ラーメン or ソースカツ丼</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">15:00</span>
+            <span class="route-place">郡山ポケふた</span>
+            <span class="route-note">PF 1箇所</span>
+        </div>
+        <div class="route-item">
+            <span class="route-time">16:30</span>
+            <span class="route-place">郡山駅 → 新幹線 → 東京</span>
+        </div>
+    </div>
+</div>
+
+<!-- ====== DAY 1 ====== -->
+<div class="day-divider">DAY 1 - 福島市→猪苗代→会津若松</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFE4B530, #FFE4B560);">
+    <span class="slide-number">DAY 1</span>
+    <h2>出発！東京→福島</h2>
+    <div class="transport-box">
+        <div class="train-name">東北新幹線 やまびこ</div>
+        <div class="train-route">東京駅 08:00頃発 → 福島駅 09:30頃着</div>
+        <div class="detail-item">約1時間30分、片道8,800円（指定席）</div>
+        <div class="detail-item">福島駅でレンタカーピックアップ（2日間 約10,000円）</div>
+    </div>
+    <div class="warning-box">新幹線は事前にえきねっとで予約すると割引あり！（お先にトクだ値で最大35%OFF）</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+    <h2>ポケふた #247 福島市</h2>
+    <div class="time-badge">10:00 福島駅周辺</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・モルペコ<span class="pokefuta-id">#247</span></div>
+        <div class="pokefuta-location">福島市 ｜ 福島駅から車5分</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.80441,140.41091" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFB6C130, #FFB6C160);">
+    <span class="slide-number">DAY 1</span>
+    <h2>円盤餃子ランチ</h2>
+    <div class="time-badge">10:30〜11:30 福島市名物！</div>
+
+    <div class="restaurant-card recommended">
+        <div class="restaurant-name">満腹<span class="rec-badge">元祖</span></div>
+        <div class="restaurant-price">円盤餃子（30個）1,980円</div>
+        <div class="restaurant-note">元祖円盤餃子！大人気で行列必至。土日祝は11:40〜営業</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=満腹+円盤餃子+福島市" target="_blank">マップ</a>
+    </div>
+    <div class="restaurant-card">
+        <div class="restaurant-name">照井 福島駅前店</div>
+        <div class="restaurant-price">円盤餃子 1,650円</div>
+        <div class="restaurant-note">1953年創業の老舗。駅前で便利</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=照井+円盤餃子+福島駅" target="_blank">マップ</a>
+    </div>
+    <div class="warning-box">満腹は行列の可能性あり。照井は駅前で確実に入れる！</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+    <h2>ポケふた #279 二本松市</h2>
+    <div class="time-badge">12:00 福島市から車30分</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・ペロッパフ<span class="pokefuta-id">#279</span></div>
+        <div class="pokefuta-location">二本松市 ｜ 福島市から車30分</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.593347,140.464001" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+    <h2>ポケふた #282 猪苗代町</h2>
+    <div class="time-badge">13:30 磐梯山のふもと</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・ハヤシガメ・スワンナ<span class="pokefuta-id">#282</span></div>
+        <div class="pokefuta-location">猪苗代町 ｜ 二本松から車40分。猪苗代湖の町</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.538088,140.107569" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #98FB9830, #98FB9860);">
+    <span class="slide-number">DAY 1</span>
+    <h2>五色沼散策</h2>
+    <div class="time-badge">14:00〜15:30 裏磐梯の神秘</div>
+    <div class="info-grid">
+        <div class="info-label">場所</div><div class="info-value">裏磐梯・五色沼自然探勝路</div>
+        <div class="info-label">所要時間</div><div class="info-value">約1〜1.5時間（片道4km）</div>
+        <div class="info-label">料金</div><div class="info-value">無料</div>
+        <div class="info-label">見どころ</div><div class="info-value">エメラルド・コバルトブルー・ターコイズと色が変わる神秘の沼</div>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=五色沼入口+裏磐梯" target="_blank">マップ</a>
+    <div class="warning-box">片道なので、毘沙門沼側から入って途中で折り返すのがおすすめ（車を停めた場所に戻れる）</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+    <h2>ポケふた #281 北塩原村</h2>
+    <div class="time-badge">15:30 五色沼のすぐ近く</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・バニリッチ<span class="pokefuta-id">#281</span></div>
+        <div class="pokefuta-location">北塩原村 ｜ 裏磐梯エリア</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.656148,140.089446" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 1</span>
+    <h2>ポケふた #248 会津若松市</h2>
+    <div class="time-badge">16:30 裏磐梯から車40分</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・エルレイド<span class="pokefuta-id">#248</span></div>
+        <div class="pokefuta-location">会津若松市 ｜ 会津のラッキー！</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.461098,139.927545" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #E6E6FA30, #E6E6FA60);">
+    <span class="slide-number">DAY 1</span>
+    <h2>東山温泉</h2>
+    <div class="time-badge">17:30 チェックイン！</div>
+    <div class="onsen-card">
+        <div class="onsen-title">&#9832; 東山温泉 &#9832;</div>
+        <p style="margin-bottom:12px;">会津藩の奥座敷。渓流沿いの落ち着いた温泉街。露天風呂付き客室もあり、カップルにぴったり！</p>
+        <div class="info-grid">
+            <div class="info-label">場所</div><div class="info-value">会津若松駅からバス16分 / 車10分</div>
+            <div class="info-label">料金目安</div><div class="info-value">1泊2食 15,000〜25,000円/人</div>
+            <div class="info-label">泉質</div><div class="info-value">ナトリウム・カルシウム-硫酸塩・塩化物泉</div>
+            <div class="info-label">特徴</div><div class="info-value">美肌の湯。竹久夢二も愛した温泉</div>
+        </div>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=東山温泉+会津若松" target="_blank">マップ</a>
+    <div class="warning-box">早めに予約！楽天トラベルかじゃらんで露天風呂付き客室を探すのがおすすめ</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFB6C130, #FFB6C160);">
+    <span class="slide-number">DAY 1</span>
+    <h2>会津の夜ごはん</h2>
+    <div class="time-badge">19:00 宿の夕食 or 外食</div>
+
+    <div class="restaurant-card recommended">
+        <div class="restaurant-name">宿の会席料理<span class="rec-badge">おすすめ</span></div>
+        <div class="restaurant-price">1泊2食プランに含む</div>
+        <div class="restaurant-note">馬刺し・こづゆ（会津の郷土料理）・地酒が楽しめる宿が多い</div>
+    </div>
+    <div class="restaurant-card">
+        <div class="restaurant-name">渋川問屋（外食の場合）</div>
+        <div class="restaurant-price">会津郷土料理コース 3,500円〜</div>
+        <div class="restaurant-note">蔵をリノベした雰囲気抜群の店。こづゆ・にしんの山椒漬けなど</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=渋川問屋+会津若松" target="_blank">マップ</a>
+    </div>
+</div>
+
+<!-- ====== DAY 2 ====== -->
+<div class="day-divider">DAY 2 - 鶴ヶ城→ポケふた→喜多方→帰京</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #87CEEB30, #87CEEB60);">
+    <span class="slide-number">DAY 2</span>
+    <h2>鶴ヶ城（会津若松城）</h2>
+    <div class="time-badge">08:30 朝イチがおすすめ！</div>
+    <div class="info-grid">
+        <div class="info-label">入場料</div><div class="info-value">大人410円（茶室込520円）</div>
+        <div class="info-label">営業時間</div><div class="info-value">8:30〜17:00（最終入場16:30）</div>
+        <div class="info-label">所要時間</div><div class="info-value">約60〜90分</div>
+        <div class="info-label">見どころ</div><div class="info-value">赤瓦の天守閣、戊辰戦争の歴史</div>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=鶴ヶ城+会津若松" target="_blank">マップ</a>
+    <div class="warning-box">11時〜14時が混みやすい。朝8:30の開城直後がベスト！</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+    <h2>会津周辺ポケふた 3箇所</h2>
+    <div class="time-badge">10:30〜12:00 会津盆地を回る</div>
+
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・ドレディア<span class="pokefuta-id">#283</span></div>
+        <div class="pokefuta-location">会津美里町 ｜ 会津若松から車15分</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.455169,139.840297" target="_blank">マップ</a>
+    </div>
+
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・カイリキー<span class="pokefuta-id">#369</span></div>
+        <div class="pokefuta-location">会津坂下町 ｜ 会津美里から車15分</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.56046,139.821186" target="_blank">マップ</a>
+    </div>
+
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・アブリー・ラルトス<span class="pokefuta-id">#372</span></div>
+        <div class="pokefuta-location">湯川村 ｜ 会津坂下から車5分</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.55742,139.862167" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #98FB9830, #98FB9860);">
+    <span class="slide-number">DAY 2</span>
+    <h2>柳津町 赤べこの里</h2>
+    <div class="time-badge">12:00 会津坂下から車20分</div>
+
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・ピンプク<span class="pokefuta-id">#251</span></div>
+        <div class="pokefuta-location">柳津町 ｜ 赤べこ発祥の地！ラッキーの進化前ピンプク！</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.528189,139.722662" target="_blank">マップ</a>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-label">圓蔵寺</div><div class="info-value">赤べこ伝説の発祥地。只見川を一望する壮大な舞台</div>
+        <div class="info-label">拝観料</div><div class="info-value">無料</div>
+        <div class="info-label">所要時間</div><div class="info-value">約30分</div>
+    </div>
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=福満虚空蔵菩薩圓蔵寺+柳津" target="_blank">圓蔵寺マップ</a>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFB6C130, #FFB6C160);">
+    <span class="slide-number">DAY 2</span>
+    <h2>喜多方ラーメン or ソースカツ丼</h2>
+    <div class="time-badge">13:30 お好みで選んで！</div>
+
+    <h3>喜多方ラーメン（柳津から車30分）</h3>
+    <div class="restaurant-card recommended">
+        <div class="restaurant-name">あじ庵食堂<span class="rec-badge">おすすめ</span></div>
+        <div class="restaurant-price">ラーメン 750円〜</div>
+        <div class="restaurant-note">土日祝は7:00〜18:00営業。朝ラーも可！</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=あじ庵食堂+喜多方" target="_blank">マップ</a>
+    </div>
+    <div class="restaurant-card">
+        <div class="restaurant-name">食堂はせ川</div>
+        <div class="restaurant-price">ラーメン 750円〜</div>
+        <div class="restaurant-note">11:00〜15:00（売切終了）。木曜定休</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=食堂はせ川+喜多方" target="_blank">マップ</a>
+    </div>
+
+    <h3>ソースカツ丼（会津若松に戻る場合）</h3>
+    <div class="restaurant-card">
+        <div class="restaurant-name">なかじま</div>
+        <div class="restaurant-price">煮込みソースカツ丼 1,100円〜</div>
+        <div class="restaurant-note">元祖「煮込みソースカツ丼」！土日祝11:00-15:00。火曜定休</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=なかじま+ソースカツ丼+会津若松" target="_blank">マップ</a>
+    </div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">DAY 2</span>
+    <h2>ポケふた #249 郡山市</h2>
+    <div class="time-badge">15:00 レンタカー返却前にラスト1箇所</div>
+    <div class="pokefuta-card">
+        <div class="pokefuta-pokemon">ラッキー・プリン<span class="pokefuta-id">#249</span></div>
+        <div class="pokefuta-location">郡山市 ｜ 喜多方から車1.5時間 / 会津若松から車1時間</div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=37.396784,140.35612" target="_blank">マップ</a>
+    </div>
+    <div class="warning-box">郡山駅でレンタカー返却→新幹線で帰京！（福島駅返却も可だが郡山が便利）</div>
+</div>
+
+<div class="slide" style="background: linear-gradient(135deg, #E6E6FA30, #E6E6FA60);">
+    <span class="slide-number">DAY 2</span>
+    <h2>帰路</h2>
+    <div class="transport-box">
+        <div class="train-name">東北新幹線 やまびこ</div>
+        <div class="train-route">郡山駅 16:30頃発 → 東京駅 17:50頃着</div>
+        <div class="detail-item">約1時間20分、片道8,250円（指定席）</div>
+    </div>
+    <div class="warning-box">郡山駅の「ままどおる」「薄皮饅頭」はお土産に最適！</div>
+</div>
+
+<!-- ====== ポケふた一覧 ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #FFF17630, #FFF17660);">
+    <span class="slide-number">POKEFUTA</span>
+    <h2>ポケふた全10箇所</h2>
+
+    <h3>1日目（5箇所）</h3>
+    <div class="info-grid">
+        <div class="info-label">#247</div><div class="info-value">ラッキー・モルペコ（福島市）</div>
+        <div class="info-label">#279</div><div class="info-value">ラッキー・ペロッパフ（二本松市）</div>
+        <div class="info-label">#282</div><div class="info-value">ラッキー・ハヤシガメ・スワンナ（猪苗代町）</div>
+        <div class="info-label">#281</div><div class="info-value">ラッキー・バニリッチ（北塩原村）</div>
+        <div class="info-label">#248</div><div class="info-value">ラッキー・エルレイド（会津若松市）</div>
+    </div>
+
+    <h3>2日目（5箇所）</h3>
+    <div class="info-grid">
+        <div class="info-label">#283</div><div class="info-value">ラッキー・ドレディア（会津美里町）</div>
+        <div class="info-label">#369</div><div class="info-value">ラッキー・カイリキー（会津坂下町）</div>
+        <div class="info-label">#372</div><div class="info-value">ラッキー・アブリー・ラルトス（湯川村）</div>
+        <div class="info-label">#251</div><div class="info-value">ラッキー・ピンプク（柳津町）</div>
+        <div class="info-label">#249</div><div class="info-value">ラッキー・プリン（郡山市）</div>
+    </div>
+</div>
+
+<!-- ====== グルメまとめ ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #FFB6C130, #FFB6C160);">
+    <span class="slide-number">GOURMET</span>
+    <h2>福島名物グルメ</h2>
+    <div class="highlights">
+        <span class="highlight-tag">円盤餃子</span>
+        <span class="highlight-tag">喜多方ラーメン</span>
+        <span class="highlight-tag">ソースカツ丼</span>
+        <span class="highlight-tag">馬刺し</span>
+        <span class="highlight-tag">こづゆ</span>
+        <span class="highlight-tag">にしんの山椒漬け</span>
+        <span class="highlight-tag">会津地酒</span>
+        <span class="highlight-tag">ままどおる</span>
+    </div>
+</div>
+
+<!-- ====== 持ち物 ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #87CEEB30, #87CEEB60);">
+    <span class="slide-number">PACKING</span>
+    <h2>持ち物チェックリスト</h2>
+    <div class="packing-grid">
+        <div class="packing-item">免許証</div>
+        <div class="packing-item">新幹線チケット（えきねっと）</div>
+        <div class="packing-item">温泉用タオル</div>
+        <div class="packing-item">カメラ（五色沼＆ポケふた）</div>
+        <div class="packing-item">歩きやすい靴（五色沼散策）</div>
+        <div class="packing-item">モバイルバッテリー</div>
+        <div class="packing-item">羽織もの（裏磐梯は涼しい）</div>
+        <div class="packing-item">お土産用エコバッグ</div>
+    </div>
+</div>
+
+<!-- ====== 費用 ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #87CEEB30, #87CEEB60);">
+    <span class="slide-number">COST</span>
+    <h2>費用まとめ（2人合計）</h2>
+    <table class="cost-table">
+        <tr><td>新幹線（往復&times;2人）</td><td>&yen;34,000</td></tr>
+        <tr><td>レンタカー（2日間）</td><td>&yen;10,000</td></tr>
+        <tr><td>ガソリン</td><td>&yen;3,000</td></tr>
+        <tr><td>宿泊（東山温泉1泊&times;2人）</td><td>&yen;40,000</td></tr>
+        <tr><td>食事（円盤餃子＋ラーメン等）</td><td>&yen;8,000</td></tr>
+        <tr><td>鶴ヶ城入場料</td><td>&yen;1,040</td></tr>
+    </table>
+    <div class="total-box">合計 約&yen;96,000（1人あたり約&yen;48,000）</div>
+    <div class="warning-box">えきねっとお先にトクだ値で新幹線が最大35%OFF！宿も早めの予約で安くなる</div>
+</div>
+
+<!-- ====== フッター ====== -->
+<div class="slide" style="background: linear-gradient(135deg, #FFB6C140, #87CEEB40); text-align: center;">
+    <p style="font-size: 1.3rem; font-weight: 900; color: #D4607A;">
+        福島ラッキー旅、楽しんで！&#127800;
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; color: #888;">
+        &#x2764; Travel Planner &times; ポケふた巡り
+    </p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; しおり一覧に戻る</a></div>
+
+</body>
+</html>
